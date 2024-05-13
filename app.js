@@ -1,0 +1,79 @@
+{
+  "name": "FIGANINTY",
+  "description": "Whatsapp bot.",
+  "keywords": ["whatsapp bot"],
+  "repository": "https://github.com/Mer-Tens/FIGANINTY",
+  "logo": "https://telegra.ph/file/30f488b3b6335c039ae2e.jpg",
+  "stack": "container",
+  "env": {
+    "AUTOREAD": {
+      "description": "Enable auto read of messages",
+      "required": false,
+      "value": "FALSE"
+    },
+    "FOR_NOTIFICATION": {
+  "description": "Type the number you will like to be recieving notification when bot restarts..",
+  "required": true,
+  "value": ""
+},
+    "OPEN_AI_KEY": {
+  "description": "Enter your Open AI key for .ai-img and .ai functionality. You can leave blank and Use .gpt command",
+  "required": false,
+  "value": ""
+},
+    "ALWAYS_ONLINE": {
+  "description": "Put TRUE if you want your bot to automatically be online.",
+  "required": false,
+  "value": "TRUE"
+},
+"AUTOVIEW_STATUS": {
+  "description": "Put TRUE if you want your bot to view whatsapp status automatically.",
+  "required": false,
+  "value": "TRUE"
+},
+    "WA_PRESENCE": {
+  "description": "Put value as recording if you want bot to be recording all times and typing for typing",
+  "required": false,
+  "value": "recording"
+},
+    "MONGO_DB": {
+      "description": "Put your mongodb database url",
+      "required": true,
+      "value": "mongodb+srv://Bikash:Bikash@bikash.yl2nhcy.mongodb.net/?retryWrites=true&w=majority"
+    },
+    "PREFIX": {
+  "description": "Put any symbol. Leave it blank if you want it to reply to all commands without prefix",
+  "required": false,
+  "value": "."
+},
+"APP_NAME": {
+  "description": "Paste the name that you had put above",
+  "required": true,
+  "value": ""
+},
+"HEROKU_API": {
+  "description": "Get from heroku account settings tab",
+  "required": true,
+  "value": ""
+},
+"OWNER": {
+  "description": "Type the numbers you will like to be Owners,Separate with a comma.",
+  "required": false,
+  "value": "254716092929"
+}
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
