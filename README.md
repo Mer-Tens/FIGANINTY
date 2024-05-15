@@ -1,4 +1,4 @@
-h1 align="center"> This base was created by The FIGANINTY2-TECH </h1>
+**This base was created by The FIGANINTY2-TECH**
 
 <p align="center">
 <img src="https://telegra.ph/file/30f488b3b6335c039ae2e.jpg" width="128" height="128"/>
