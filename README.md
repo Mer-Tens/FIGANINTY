@@ -41,7 +41,8 @@ mongodb+srv://Bikash:Bikash@bikash.yl2nhcy.mongodb.net/?retryWrites=true&w=major
 
  After creating your Heroku account, you can now deploy
     <br>
-<a href=' https://dashboard.heroku.com/new?template=https://github.com/Mer-Tens/FIGANINTY'><img  src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+<a href='https://heroku.com/deploy' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-Deploy-white?style=for-the-badge&logo=heroku&logoColor=purple'/></a>
+
 
 
 ## ```For any querries you can reach me out ```
