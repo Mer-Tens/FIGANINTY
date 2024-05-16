@@ -6,7 +6,7 @@
 </p>
 <h1 align="center"> M E R T E N S (█████████████████)</h1>
 </p>
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Noteworthy&weight=800&size=35&duration=4998&pause=1000&color=35B7F0E4&vCenter=true&random=false&width=435&lines=THIS+IS+FIGANINTY;A+MULTI+DEVICE+WHATSAPP+BOT;A+BOT+CREATED+BY+MERTENS;WE+ARE+FIGANINTY;ACKNOWLEDGE+ME. " /></a>
+<a href="<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Noteworthy&weight=800&size=25&duration=4998&pause=1000&color=35B7F0E4&vCenter=true&random=false&width=435&lines=THIS+IS+FIGANINTY;A+MULTI+DEVICE+WHATSAPP+BOT;A+BOT+CREATED+BY+MERTENS;WE+ARE+FIGANINTY;ACKNOWLEDGE+ME" alt="Typing SVG" /></a>
 <p align="center"><a href="https://github.com/Mer-Tens"><img title="Author" src="https://img.shields.io/badge/OWNER-Maxi Mertens-black.svg?color=54aeff&style=for-the-badge&logo=github" /></p><br>
 
 
