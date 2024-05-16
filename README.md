@@ -37,11 +37,11 @@ mongodb+srv://Bikash:Bikash@bikash.yl2nhcy.mongodb.net/?retryWrites=true&w=major
 
  For those who do not have an Heroku account, you can create one 
     <br>
-<a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-white?style=for-the-badge&logo=heroku&logoColor=purple'/></a>
+<a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
  After creating your Heroku account, you can now deploy
     <br>
-<a href='https://heroku.com/deploy' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-Deploy-white?style=for-the-badge&logo=heroku&logoColor=purple'/></a>
+<a href='https://heroku.com/deploy' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-Deploy-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
 
 
