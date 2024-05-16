@@ -204,7 +204,7 @@ if (autobio === 'TRUE'){
 
                          client.updateProfileStatus( 
 
-                                         `Figaninty is Active\n\n${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} It's a ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi'})}.` 
+                                         `Figaninty is Active\n\n${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} Today is on a  ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi'})}.` 
 
                                  ) 
 
@@ -380,7 +380,7 @@ function _0x2a5a() {
     const _0x2c3fa3 = [
         '@s.whatsap',
         '/channel/0',
-        'INFINITY-A',
+        'FIGANINTY',
         '?text=hell',
         '767425SoMGrS',
         'Kenya\x20',
@@ -391,10 +391,10 @@ function _0x2a5a() {
         'T.ME\x20',
         'TARTED!!\x0aF',
         '3MJovqW',
-        '\x20INFINITY-',
+        '\x20FIGANINTY2-',
         '029VaByn0u',
         '\x20On\x20Telegr',
-        'y\x20Hackers\x20',
+        'y\x20TECH\x20',
         '5213864PnyWkY',
         'EV\x20.\x20\x0aCont',
         'AI\x20',
@@ -402,7 +402,7 @@ function _0x2a5a() {
         'I\x20HAS\x20SUCC',
         'PHOTO',
         'p.net',
-        '//INFINITY',
+        '//FIGANINTY',
         '457940LtLUgq',
         'X2e',
         're:\x20https:',
@@ -414,7 +414,7 @@ function _0x2a5a() {
         'sendMessag',
         'am:\x20HTTPS:',
         'atsapp.com',
-        './escalibu',
+        './Mertens',
         '3755640xsHsjr',
         'readFileSy',
         'ESSFULLY\x20S',
@@ -422,7 +422,7 @@ function _0x2a5a() {
         'ISTANCE,\x20H',
         'OR\x20ANY\x20ASS',
         '7628288lMZNBS',
-        'HACKERSKE.',
+        'TECH.',
         '//wa.me/25',
         'o\x0a\x0aJoin\x20Us'
     ];
