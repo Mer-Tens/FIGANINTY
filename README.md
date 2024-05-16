@@ -50,7 +50,7 @@ mongodb+srv://Bikash:Bikash@bikash.yl2nhcy.mongodb.net/?retryWrites=true&w=major
 
 <a href="https://api.whatsapp.com/send?phone=254799355427&text=Heyy+Sir"><img src="https://img.shields.io/badge/Chat with me-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
-<a href="https://t.me/Ma_Xie&text=Heyy+Sir"><img src="https://img.shields.io/badge/Chat with Mertens-25D366?style=for-the-badge&logo=telegram&logoColor=blue"/ 
+<a href="https://t.me/Ma_Xie&text=Heyy+Sir"><img src="https://img.shields.io/badge/Chat with Mertens-25D366?style=for-the-badge&logo=telegram&logoColor=blue" />
 </p>
 
 
