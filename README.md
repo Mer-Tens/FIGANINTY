@@ -20,7 +20,7 @@ _**FIGANINTY now is available for public deployments😉**_
 **Follow this procedure to set up and deploy FIGANINTY🙃**
 
  ### 1. FORK THIS REPO
-<a href='[https://github.com/Mer-Tens/FIGANINTY/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork This Repo-black?style=for-the-badge&logo=git&logoColor=white'/></a>
+<a href='https://github.com/Mer-Tens/FIGANINTY/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork This Repo-black?style=for-the-badge&logo=git&logoColor=white'/></a>
 
 ###  2. YOU CAN NOW PAIR THIS BOT TO YOUR WHATSAPP ACCOUNT 
 <a href='https://replit.com/@maximertens254/Figaninty?v=1' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Pair with Replit-black?style=for-the-badge&logo=opencv&logoColor=orange'/></a>
