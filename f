@@ -13,7 +13,6 @@ const yts = require("yt-search");
 const ytsr = require("ytsr");
 const acrcloud = require ('acrcloud');
 const fonts = require('./lib/fonts.js');
-const menufont = require('./lib/menufonts.js');
 const availableStyles = Object.keys(fonts);
 const availableFontStyles = Object.keys(menufont);
 const path = require('path');
@@ -103,11 +102,11 @@ const videoSearchResults = new Map();
 let titleUrlMap = {}; 
 const userContextMap = new Map();
 
-const author = process.env.STICKER_AUTHOR || 'KRESSWELL';
-const packname = process.env.STICKER_PACKNAME || 'InfinityAI';
+const author = process.env.STICKER_AUTHOR || 'I am';
+const packname = process.env.STICKER_PACKNAME || 'Saitama❄️';
 
-    const kress = (m.quoted || m); 
-         const quoted = (kress.mtype == 'buttonsMessage') ? kress[Object.keys(kress)[1]] : (kress.mtype == 'templateMessage') ? kress.hydratedTemplate[Object.keys(kress.hydratedTemplate)[1]] : (kress.mtype == 'product') ? kress[Object.keys(kress)[0]] : m.quoted ? m.quoted : m; 
+    const maxi = (m.quoted || m); 
+         const quoted = (maxi.mtype == 'buttonsMessage') ? maxi[Object.keys(maxi)[1]] : (maxi.mtype == 'templateMessage') ? maxi.hydratedTemplate[Object.keys(maxi.hydratedTemplate)[1]] : (maxi.mtype == 'product') ? maxi[Object.keys(maxi)[0]] : m.quoted ? m.quoted : m; 
     const mime = (quoted.msg || quoted).mimetype || "";
             const qmsg = (quoted.msg || quoted);
   
@@ -122,7 +121,7 @@ const packname = process.env.STICKER_PACKNAME || 'InfinityAI';
 const wapresence = process.env.WA_PRESENCE || 'recording';
     const autoread = process.env.AUTOREAD || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
-const dev = process.env.OWNER || '923166234989'
+const dev = process.env.OWNER || '254799355427'
 
     const from = m.chat;
    const isRegister = register.includes(m.sender);
@@ -153,7 +152,7 @@ const runtime = function (seconds) {
  } 
 
  const timestamp = speed(); 
-   const infinityspeed = speed() - timestamp 
+   const figanintyspeed = speed() - timestamp 
 
     const color = (text, color) => {
       return !color ? chalk.green(text) : chalk.keyword(color)(text);
@@ -164,11 +163,11 @@ const hours = Math.floor((uptime % (24 * 3600)) / 3600); // Calculate hours
 const minutes = Math.floor((uptime % 3600) / 60); // Calculate minutes
 const seconds = Math.floor(uptime % 60); // Calculate seconds
 //Uptime
-  const uptimeMessage = `*Hello,Infinity AI is alive now since ${day} D ${hours} H ${minutes} M ${seconds} S*`;
+  const uptimeMessage = `*Hi Dawgg. This is FIGANINTY. I am alive and running since ${day} D ${hours} H ${minutes} M ${seconds} S ago*`;
 
-  const runMessage = `*☀️ ${day} Day*\n *🕐 ${hours} Hour*\n *⏰ ${minutes} Minimum*\n *⏱️ ${seconds} Seconds*\n`;
- const devkresswell = dev.split(",");
-    const Owner = devkresswell.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(m.sender)
+  const runMessage = `*☀️ ${day} Day*\n *⌛ ${hours} Hour*\n *🕰️ ${minutes} Minimum*\n *⏱️ ${seconds} Seconds*\n`;
+ const devmaxie = dev.split(",");
+    const Owner = devmaxie.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(m.sender)
 
     // Group
     
@@ -182,14 +181,14 @@ const seconds = Math.floor(uptime % 60); // Calculate seconds
     const isBanchat = m.isGroup ? bancht.includes(from) : false;
     const isNsfw = m.isGroup ? nsfw.includes(from) : false;
       const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false;
-const admin = process.env.ADMIN_MSG || 'Admin Command Only';
-    const group = process.env.GROUP_ONLY_MSG || 'Use this command only in groups!!';
-    const botAdmin = process.env.BOT_ADMIN_MSG || 'I need to be admin to perform that task'
+const admin = process.env.ADMIN_MSG || 'Admins can *ONLY* use this command lol';
+    const group = process.env.GROUP_ONLY_MSG || 'Just add me to your groups so that you can freely use this command!!';
+    const botAdmin = process.env.BOT_ADMIN_MSG || 'Promote me so that I may accomplish your task'
 const keyopenai = process.env.OPEN_AI_KEY || '';
-    const NotOwner = process.env.NOT_OWNER_MSG || 'Owner Command';
+    const NotOwner = process.env.NOT_OWNER_MSG || 'You ain't my owner lol';
 const NotNsfw = process.env.NSFWMSG || 'Nsfw is not activated here';
-const wachannel = "https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e";
-const isdone = process.env.DONEMSG || 'Request successful!!';
+const wachannel = "https://whatsapp.com/channel/0029VaaoDP0J3juyVn6gvo3J";
+const isdone = process.env.DONEMSG || 'I have successfully received your request!!';
 
 //Bot status
         const used = process.memoryUsage()
@@ -237,18 +236,24 @@ function formatBytes(bytes) {
 
 async function loading () {
 var Ayushlod = [
+"`T`",
+"`H`",
 "`I`",
-"`N`",
+"`S`",
+"` `",
+"`I`",
+"`S`",
+"` `",
 "`F`",
 "`I`",
+"`G`",
+"`A`",
 "`N`",
 "`I`",
+"`N`",
 "`T`",
-"`Y`",
-"` `",
-"`A`",
-"`I`",
-"`INFINITY-AI...`",
+"`Y`",	
+"`FIGANINTY BOT BY MERTENS...`",
 ]
 let { key } = await client.sendMessage(from, {text: 'ʟᴏᴀᴅɪɴɢ...'})
 
@@ -260,7 +265,7 @@ await client.sendMessage(from, {text: Ayushlod[i], edit: key });
  if (AntiLinkAll)
    if (budy.includes("https://")){
 if (!isBotAdmin) return
-bvl = `\`\`\`「 Link Detected 」\`\`\`\n\nyou are a group admin thats why i wont kick you, but remember from next time`
+bvl = `\`\`\`「 Link Detected 」\`\`\`\n\nYou are so lucky that you are a group admin but I would have kicked your butt out of here so watch out`
 if (isAdmin) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (Owner) return reply(bvl)
@@ -274,14 +279,14 @@ if (Owner) return reply(bvl)
                                 }
                             })
                         client.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-client.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+client.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending unwanted links in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
   let smallinput = budy.toLowerCase()
 
 
-const infinityfeature = () =>{
-            var mytext = fs.readFileSync("./escalibud.js").toString()
+const figanintyfeature = () =>{
+            var mytext = fs.readFileSync("./saitama.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
             return numUpper
 }
@@ -320,7 +325,7 @@ async function Telesticker(url) {
             data2 = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
             result = {
             status: 200,
-            author: '𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟',
+            author: 'MAXIE',
             url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + data2.data.result.file_path
             }
             mariayresult.push(result)
@@ -342,7 +347,7 @@ try {
         let imageUrl = await
 client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
         client.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
-        reply('*Status Download Successful: by InfinityAI*');
+        reply('*FIGANINTY has successfully downloaded the status*');
       }
 
       // Check if it's a video
@@ -350,7 +355,7 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
         let videoCaption = quotedMessage.videoMessage.caption;
         let videoUrl = await client.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
         client.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
-        reply('*Status Download Successful: by InfinityAI*');
+        reply('*FIGANINTY has successfully downloaded the status*');
       }
     }
   }
@@ -385,17 +390,17 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
             else if (room.game.board === 511) isTie = true
             let arr = room.game.render().map(v => {
             return {
-            X: '❌',
-            O: '⭕',
-            1: '1️⃣',
-            2: '2️⃣',
-            3: '3️⃣',
-            4: '4️⃣',
-            5: '5️⃣',
-            6: '6️⃣',
-            7: '7️⃣',
-            8: '8️⃣',
-            9: '9️⃣',
+            X: '✖️',
+            O: '⚪',
+            1: '❶',
+            2: '❷',
+            3: '❸',
+            4: '❹',
+            5: '❺',
+            6: '❻',
+            7: '❼',
+            8: '🎱',
+            9: '❾',
             }[v]
             })
             if (isSurrender) {
@@ -409,9 +414,9 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} Wins!!🥳` : isTie ? `Game Tie` : `Current Player: ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
-❌: @${room.game.playerX.split('@')[0]}
-⭕: @${room.game.playerO.split('@')[0]}
+${isWin ? `@${winner.split('@')[0]} has finally won this awesome quest for glory!!🤩🥳` : isTie ? `Game Tie` : `Current Player: ${['✖️', '⚪'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+✖️: @${room.game.playerX.split('@')[0]}
+⚪: @${room.game.playerO.split('@')[0]}
 
 Type *surrender* to admit defeat`
             if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
@@ -424,7 +429,7 @@ Type *surrender* to admit defeat`
             }
  const fkontak = { 
                   key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./escalibud.jpg')}}}
-//══════════[ Automatic Reply ]══════════//
+//______๑♡⁠๑______[ 𝗥𝗲𝗽𝗹𝗶𝗲𝗱 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 ]______๑♡⁠๑______//
 
 for (let anji of setik){
                                 if (budy === anji){
@@ -445,7 +450,7 @@ for (let anji of setik){
                                         }
                                   }
 
-//******************* 》banchat《 ********************\\
+// ______๑♡⁠๑______》banchat《 ______๑♡⁠๑______\\
 if (isBanchat){
 if (!itsMe && !Owner)return 
 }
@@ -551,17 +556,18 @@ if (m.text) {
                 const videoDetails = info.videoDetails;
 
                 const captionMessage = `
-╭═══════════════════╮
-│ *Video Details*
+⟢______๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑______
 │
-│ *URL:* ${videoUrl}
-│ *Title:* ${videoDetails.title}
-│ *Views:* ${videoDetails.viewCount}
-│ *Duration:* ${formatDuration(videoDetails.lengthSeconds)}
-│ *Size:* ${formatBytes(videoDetails.lengthBytes)}
-│1. Download as Audio
-│2. Download as Video
-╰═══════════════════╯
+│ ➛*Here is the full details of your requested video*
+│
+│ ➛*URL of the video:* ${videoUrl}
+│ ➛*Title of the video:* ${videoDetails.title}
+│ ➛*Views of the video:* ${videoDetails.viewCount}
+│ ➛*Duration of the video:* ${formatDuration(videoDetails.lengthSeconds)}
+│ ➛*Size of the video:* ${formatBytes(videoDetails.lengthBytes)}
+│1. Press *1* if you want it to be downloaded as an audio.
+│2. Press *2* if you want it to be downloaded as a video.
+↳______๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑______╯
 `;
 
                 await client.sendMessage(m.chat, {
@@ -570,9 +576,8 @@ if (m.text) {
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
-                            title: `InfinityAI`, // Assuming botname is a string
-                            sourceUrl: `https://www.infinityhackers.tech/`, // Assuming global.link is a string
-                            body: `Bot By Kresswell Muiruri` // Assuming global.owner is a string
+                            title: `FIGANINTY`, // Assuming botname is a string
+                            body: `A bot by Maxi Mertens` // Assuming global.owner is a string
                         }
                     }
                 }, { quoted: m });
@@ -582,8 +587,8 @@ if (m.text) {
         }
     } else if (m.quoted && (lowerText === '1' || lowerText === '2')) {
         const quotedText = m.quoted.text.toLowerCase();
-        const isAudioMenu = quotedText.includes('download as audio');
-        const isVideoMenu = quotedText.includes('download as video');
+        const isAudioMenu = quotedText.includes('Press *1* if you want it to be downloaded as an audio');
+        const isVideoMenu = quotedText.includes('Press *2* if you want it to be downloaded as a video');
 
         if (isAudioMenu && lowerText === '1') {
             // Handle download as audio
