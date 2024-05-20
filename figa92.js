@@ -14,7 +14,6 @@ const ytsr = require("ytsr");
 const acrcloud = require ('acrcloud');
 const fonts = require('./lib/fonts.js');
 const availableStyles = Object.keys(fonts);
-const availableFontStyles = Object.keys(menufont);
 const path = require('path');
 const uploadImage = require('./lib/uploadimg.js');
 const translate = require('translate-google-api');
@@ -58,7 +57,7 @@ const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oN
 
 
 
-module.exports = escalibud = async (client, m, chatUpdate, store) => {
+module.exports = mertens = async (client, m, chatUpdate, store) => {
   try {
     var body =
       m.mtype === "conversation"
@@ -418,7 +417,7 @@ ${isWin ? `@${winner.split('@')[0]} has finally won this awesome quest for glory
 ✖️: @${room.game.playerX.split('@')[0]}
 ⚪: @${room.game.playerO.split('@')[0]}
 
-Type *surrender* to admit defeat`
+If you think you lost the game quest just type *surrender* to admit defeat`
             if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
             if (room.x !== room.o) await client.sendText(room.x, str, m, { mentions: parseMention(str) } )
@@ -567,6 +566,7 @@ if (m.text) {
 │ ➛*Size of the video:* ${formatBytes(videoDetails.lengthBytes)}
 │1. Press *1* if you want it to be downloaded as an audio.
 │2. Press *2* if you want it to be downloaded as a video.
+│   ⇄ ◀ 𓊕 ▶ ↻
 ↳______๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑____________๑♡⁠๑______╯
 `;
 
@@ -680,11 +680,12 @@ function generateMenu(cmdList, title) {
     .map((v) => `│${v}`).join('\n');
 
     return `
-╭───═❮ ${title} ❯═───❖
-│ ╭─────────────···▸
+______๑♡⁠๑______${title} ______๑♡⁠๑______
+│
+│ ______๑♡⁠๑______
 ${formattedCmdList.split('\n').map(item => `│${item ? ' ' + item.trim() : ''}`).join('\n')}
-│ ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+│ ╰______๑♡⁠๑______
+╰______๑♡⁠๑______`;
 }
 
 const introTextConvert = generateMenu(cmdConv, '𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗥');
@@ -700,20 +701,21 @@ const introTextAi = generateMenu(cmdAi, '𝗔𝗜 𝗠𝗘𝗡𝗨');
 const introTextLogo = generateMenu(cmdLogo, '𝗟𝗢𝗚𝗢 𝗠𝗘𝗡𝗨');
 
 const menuMessage = `
-╭───═❮ *ᴍᴇɴᴜ ʟɪsᴛ*❯═───❖
-│╭─────────────···▸
-││▸ ➊ ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ
-││▸ ➋ ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ
-││▸ ➌ ɢʀᴏᴜᴘᴍᴇɴᴜ
-││▸ ➍ sᴛᴀʟᴋᴍᴇɴᴜ
-││▸ ➎ sᴇᴀʀᴄʜᴍᴇɴᴜ
-││▸ ➏ ᴛᴏᴏʟᴍᴇɴᴜ
-││▸ ➐ ғᴜɴᴍᴇɴᴜ
-││▸ ➑ ᴀɪᴍᴇɴᴜ
-││▸ ➒ ᴍᴀɪɴᴍᴇɴᴜ
-│╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷
-Type allmenu for full command list 
+Here is the *menu* list. POowered by FIGANINTY
+╭ـــــــــــــــﮩ٨ـ *𝗠𝗘𝗡𝗨 𝗟𝗜𝗦𝗧*ـــــــــــــــﮩ٨ـ✧₊⁺
+│╭ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ✧₊⁺
+│➤ 1. 𝓒𝓞𝓝𝓥𝓔𝓡𝓣 𝓜𝓔𝓝𝓤
+│➤ 2. ᴅ𝓓𝓞𝓦𝓝𝓛𝓞𝓐𝓓 𝓜𝓔𝓝𝓤
+│➤ 3. 𝓖𝓡𝓞𝓤𝓟 𝓜𝓔𝓝𝓤
+│➤ 4. 𝓢𝓣𝓐𝓛𝓚 𝓜𝓔𝓝𝓤
+│➤ 5. 𝓢𝓔𝓐𝓡𝓒𝓗 𝓜𝓔𝓝𝓤
+│➤ 6. 𝓣𝓞𝓞𝓛 𝓜𝓔𝓝𝓤
+│➤ 7. 𝓕𝓤𝓝 𝓜𝓔𝓝𝓤
+│➤ 8. 𝓐𝓘 𝓜𝓔𝓝𝓤
+│➤ 9. 𝓜𝓐𝓘𝓝 𝓜𝓔𝓝𝓤
+│╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨✧₊⁺
+╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨✧₊⁺
+If you want my full command list, just type 𝗮𝗹𝗹𝗺𝗲𝗻𝘂 
 `;
 
 const subMenus = {
@@ -742,7 +744,7 @@ if (m.text) {
             if (subMenu !== undefined) {
                 m.reply(subMenu);
             } else {
-                m.reply('Invalid menu number. Please select a number from the menu.');
+                m.reply('You have chosen a wrong number. Please choose a number from the menu list.');
             }
         }
     }
@@ -756,66 +758,66 @@ if (m.text) {
 case 'menu':
 case 'allmenu': {
   
-    await doReact("🚀");
+    await doReact("❄️");
     let a = db.data.users[m.sender];
     
 function _0xab6b() {
     const _0x4b2b41 = [
-        '*\x0a│\x20*⁺◛˖𝐏𝐫',
-        '┈•\x0a│\x20𝗛𝗼𝘄𝗱𝘆',
-        '𝐞𝐦𝐢𝐮𝐦*\x20:\x20*',
-        '⁺◛˖𝐍𝐮𝐦𝐛𝐞𝐫*',
-        '─────────❃',
-        'lic*\x0a╰────',
-        '𝐚𝐦𝐞*\x20:*╚»★',
+        '*\x0a│\x20*⁺✉️˖𝑃𝒓',
+        '┈•\x0a│\x20𝐻𝒆𝒚𝒚𝒐',
+        '𝒆𝒎𝒊𝒖𝒎*\x20:\x20*',
+        '⁺✉️˖𝑁𝒖𝒎𝒃𝒆𝒓*',
+        'ـــــــــــــــﮩ٨ـ️✮⋆˙',
+        'lic*\x0a╰ـــــــــــــــﮩ٨ـ️',
+        '𝐚𝐦𝐞*\x20:*╰⪼',
         '42968CDcBGi',
         '1833670PIgWLD',
-        '\x20ＩＮＦＩＮＩＴＹ\x20',
-        '\x0a╭──═❮\x20*ミ★',
-        '*\x0a╰───────',
-        '\x0a\x0a✶⊶⊷⊶⊷❍『ʙ',
-        '*\x0a│\x20*⁺◛˖𝐌𝐨',
-        '𝐝𝐞*\x20:\x20*Pub',
+        '\x20𝐹 𝐼 𝐺 𝐴 𝑁 𝐼 𝑁 𝑇 𝑌\x20',
+        '\x0a╭ـــــــــــــــﮩ٨ـ️\x20*✮⋆˙',
+        '*\x0a╰ـــــــــــــــﮩ٨ـ️',
+        '\x0a\x0a⋆༺𓆩☠︎︎𓆪༻⋆『B',
+        '*\x0a│\x20*⁺◛˖𝑀𝒐',
+        '𝒅𝒆*\x20:\x20*Pub',
         '8973966JnLXPU',
         '180SsnQdv',
-        ']*\x0a│\x20*⁺◛˖𝐔',
-        '𝐧𝐟𝐨彡★*\x20❯═─',
-        '^)\x20ＫＲＥＳＳＷＥ',
-        '𝐩𝐭𝐢𝐦𝐞*\x20:\x20*',
+        ']*\x0a│\x20*⁺◛˖𝑈',
+        '𝐧𝐟𝐨✮⋆˙*\x20ـــــــــــــــﮩ٨ـ️',
+        '^)\x20𝑀 𝐸 𝑅 𝑇 𝐸',
+         𝒑𝒕𝒊𝒎𝒆*\x20:\x20*',
         '18lGzbwZ',
         'pushName',
-        'ＡＩ\x20★彡*\x20❯═─',
+        '𝐵 𝑂 𝑇\x20✮⋆˙*\x20ـــــــــــــــﮩ٨ـ️',
         'split',
-        '┈•\x0a│\x20*⁺◛˖𝐍',
-        '𝐚𝐦𝐞*\x20:\x20*◔͜͡◔',
+        '┈•\x0a│\x20*⁺◛˖𝑁',
+        '𝒂𝒎𝒆*\x20:\x20*◕⩊◕',
         'uptime',
         'Ｉ★«╝*\x0a│\x20*⁺',
-        'ʀs\x20』❍⊶⊷⊶⊷✶',
-        '\x20*◔͜͡◔\x20',
-        '──────────',
-        'Ｉｎｆｉｎｉｔｙ\x20Ａ',
+        'ʀs\x20』⋆༺𓆩☠︎︎𓆪༻⋆',
+        '\x20*◕⩊◕\x20',
+        'ـــــــــــــــﮩ٨ـ️',
+        '𝐹 𝐼 𝐺 𝐴 𝑁 𝐼 𝑁 𝑇 𝑌\x20Ａ',
         '5AhUVxF',
-        'ʏ\x20ᴛʜᴇ\x20ɪɴғɪ',
-        '\x20*⁺◛˖𝐁𝐨𝐭\x20𝐍',
+        'ʏ\x20THE\x20FIGAN',
+        '\x20*⁺◛˖𝐵𝒐𝒕\x20𝐍',
         '\x20:\x20*',
-        '\x0a│\x20*⁺◛˖𝐏𝐫𝐞',
-        'ɴɪᴛʏ\x20ʜᴀᴄᴋᴇ',
-        '☆*\x20❯═─┈•\x0a│',
-        '𝐦𝐞*\x20:\x20*(^▽',
-        '◛˖𝐎𝐰𝐧𝐞𝐫\x20𝐍𝐚',
-        '──❃\x20\x0a╭──═❮',
-        'ＬＬ\x20(✿^▽^)*',
+        '\x0a│\x20*⁺✉️˖𝑃𝒓𝒆',
+        'NINTY\x20TECH',
+        '☆*\x20ـــــــــــــــﮩ٨ـ️•\x0a│',
+        '𝒎𝒆*\x20:\x20*(^▽',
+        '✉️˖𝑂𝒘𝒏𝒆𝒓\x20𝑁𝒂',
+        '──✮⋆˙\x20\x0a╭ـــــــــــــــﮩ٨ـ️',
+        '𝑁 𝑆\x20(¯\_(ツ)_/¯)*',
         'sender',
-        '\x20🚀\x20◔͜͡◔*\x0a│\x20*',
-        '》𝗕𝗼𝘁\x20𝗜𝗻𝗳𝗼《',
+        '\x20❄️\x20◕⩊◕*\x0a│\x20*',
+        '》𝐵𝒐𝒕\x20𝐼𝒏𝒇𝒐《',
         '5322448gAErMF',
         '4066503hBjWZh',
-        '\x20*★ミ𝐔𝐬𝐞𝐫\x20𝐈',
+        '\x20*✮⋆˙𝑈𝒔𝒆𝒓\x20𝐈',
         '3710622PPizJJ',
-        '\x20◔͜͡◔*\x20👋\x20\x20\x0a╰',
+        '\x20◕⩊◕*\x20😉\x20\x20\x0a╰',
         '9315296CFxBfI',
-        '\x0a\x0a╭──═❮\x20*☆',
-        '𝐟𝐢𝐱*\x20:\x20\x20*['
+        '\x0a\x0a╭ـــــــــــــــﮩ٨ـ️\x20*☆',
+        '𝒇𝒊𝒙*\x20:\x20\x20*['
     ];
     _0xab6b = function () {
         return _0x4b2b41;
@@ -854,109 +856,109 @@ let introText = _0xa18fd4(0x107) + _0xa18fd4(0x106) + _0xa18fd4(0x114) + _0xa18f
     
     
     introText += `
-╭───〈 𝗔𝗗𝗠𝗜𝗡 𝗠𝗘𝗡𝗨 〉───◆
-┃     ╭─────────────···▸
+╭ـــــــــــــــﮩ٨ـ 𝓐𝓓𝓜𝓘𝓝'𝓢 𝓜𝓔𝓝𝓤 ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdTool.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗧𝗢𝗢𝗟 𝗠𝗘𝗡𝗨〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓣𝓞𝓞𝓛 𝓜𝓔𝓝𝓤 ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ــ
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdAi.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗔𝗜 𝗠𝗘𝗡𝗨 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓐𝓘 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdOwner.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗢𝗪𝗡𝗘𝗥 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓞𝓦𝓝𝓔𝓡 𝓜𝓔𝓝𝓤 ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdMain.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓖𝓔𝓝𝓔𝓡𝓐𝓛 𝓜𝓔𝓝𝓤 ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdConv.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗥 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓒𝓞𝓝𝓥𝓔𝓡𝓣𝓔𝓡 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdFun.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗙𝗨𝗡 𝗠𝗘𝗡𝗨 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓕𝓤𝓝 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷✪`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
 cmdList = cmdStalk.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗦𝗧𝗔𝗟𝗞 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓢𝓣𝓐𝓛𝓚 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷✪`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdSearch.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗦𝗘𝗔𝗥𝗖𝗛 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓢𝓔𝓐𝓡𝓒𝓗 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
    cmdList = cmdLogo.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗟𝗢𝗚𝗢 𝗠𝗘𝗡𝗨 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓛𝓞𝓖𝓞 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 
     cmdList = cmdDown.sort((a, b) => a.localeCompare(b)).map((v, i) => `${randomSymbol}┃${convertToFontStyle(prefix + v, randomFontStyle)}`).join('\n');
     
     introText += `
-╭───〈 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥 〉───◆
-┃     ╭─────────────···▸
+╭ ـــــــــــــــﮩ٨ـ 𝓓𝓞𝓦𝓝𝓛𝓞𝓐𝓓 𝓜𝓔𝓝𝓤  ـــــــــــــــﮩ٨ـ
+┃     ╭ـــــــــــــــﮩ٨ـ️
 ${cmdList.split('\n').map(item => `┃${item ? ' ' + item.trim() : ''}`).join('\n')}
-┃     ╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+┃     ╰ـــــــــــــــﮩ٨ـ️
+╰ــــــــﮩـــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ️ـــــــــــــــﮩ٨ـ`;
 client.sendMessage(m.chat, {
                         text: introText,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: `ɪɴғɪɴɪᴛʏ ᴀɪ`,
-                                body: `ＢＹ ＩＮＦＩＮＩＴＹ ＨＡＣＫＥＲＳ`,
-                                thumbnail: fs.readFileSync('./escalibud.jpg'),
-                                sourceUrl: `https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e`,
+                                body: `Λ BӨƬ BY FIGΛПIПƬY2`,
+                                thumbnail: fs.readFileSync('./figa92.jpg'),
+                                sourceUrl: `https://www.whatsapp.com/channel/0029VaaoDP0J3juyVn6gvo3J`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                        }
@@ -974,12 +976,12 @@ case 'rentbot': {
 break;
 case 'imagine':
 case 'dalle':
-case 'aiimage':
+case 'aiimage':		      
  
-    if (!text) throw `*This command generates images from text prompts*\n\n*𝙴xample usage*\n*◉ ${prefix + command} Beautiful anime girl*\n*◉ ${prefix + command} Elon Musk in pink output*`;
+    if (!text) throw `*Heyyo dawgg This type of command is used to generate AI images from texts*\n\n*𝙴xample usage*\n*◉ ${prefix + command} A beautiful art of Paris *\n*◉ ${prefix + command} William Ruto in a bikini*`;
 
     try {
-        m.reply('*Please wait, generating images...*');
+        m.reply('*A moment lol. I am generating the desired image...*');
 
         const endpoint = `https://rest-api.akuari.my.id/ai/bing-ai2?text=${encodeURIComponent(text)}`;
         console.log('Fetching from endpoint:', endpoint); // Add this line for logging
@@ -995,12 +997,12 @@ case 'aiimage':
         }
     } catch (error) {
         console.error('Error:', error); // Add this line for logging
-        throw '*Oops! Something went wrong while generating images. Please try again later.*';
+        throw '*Sorry lol....I am unable to generate your desired image. Please try again later*';
     }
     break;
 
 case 'when':
-                                if (!text) return reply(`Use Text, Example : ${prefix + command} will i get married `)
+                                if (!text) return reply(`Use Text, Example : ${prefix + command} will I have some s*x chat with my fiancee `)
                                         const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
                                         const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 client.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
@@ -1012,16 +1014,16 @@ case 'fancy': {
   
     if (args.length === 0) {
         const availableStylesPreview = availableStyles.map(style => {
-            const previewText = convertToFontStyle("Infinity AI", style);
+            const previewText = convertToFontStyle("FIGANINTY BOT", style);
             return `${style}: ${previewText}`;
         }).join('\n');
 
-        m.reply(`Usage:\n${prefix}fontchange <style> <text>\nAvailable font styles with previews:\n${availableStylesPreview}`);
+        m.reply(`Usage:\n${prefix}fontchange <style> <text>\nHere are the available font styles:\n${availableStylesPreview}`);
     } else {
         const style = parseInt(args[0]);
 
         if (isNaN(style) || style < 0 || style > 34) {
-            m.reply(`Style number should be between 0 and 34. Please choose a valid style.`);
+            m.reply(`Style number should be between 0 and 34. Please choose a valid style to suit you.`);
         } else {
             const inputText = args.slice(1).join(" ");
             const styledText = convertToFontStyle(inputText, style);
@@ -1077,12 +1079,12 @@ case 'translate': case 'trt': {
         });
         m.reply(result[0]);
       } catch {
-        return m.reply(` Language code not supported.`);
+        return m.reply(` Am sorry. The language code is not supported.`);
       }
     }
   } catch (error) {
     console.error("Error in 'translate' command:", error);
-    m.reply(` An error occurred while translating.`);
+    m.reply(` So sorry. An error occurred while translating.`);
   }
   break; // Case break statement
 }
@@ -1092,13 +1094,13 @@ try {
   if (!m.quoted) return reply('Quote a sticker!')
   let fortunx = await client.getName(sender);
 
-  if (!/webp/.test(mime)) throw `Tag sticker with caption  ${prefix + command}`;
+  if (!/webp/.test(mime)) throw `Heyyo please tag a sticker with that caption lol  ${prefix + command}`;
   if (m.quoted.isAnimated === true) {
   client.downloadAndSaveMediaMessage(quoted, "gifee");
   client.sendMessage(m.chat, {sticker:fs.readFileSync("gifee.webp")},{quoted:m});
   } else if (/image/.test(mime)) {
   let mediax = await quoted.download();
-  let encmediax = await client.sendImageAsSticker(m.chat, mediax, m, { packname: Kresswell, author: Muiruri });
+  let encmediax = await client.sendImageAsSticker(m.chat, mediax, m, { packname: MAXI, author: MERTENS });
   await fs.unlinkSync(encmediax);
 
 
@@ -1106,14 +1108,14 @@ try {
 } else if (/video/.test(mime)) {
   if ((quoted.msg || quoted).seconds > 11) return m.reply('Not long than 10 seconds!');
   let mediaxx = await quoted.download();
-  let encmediaxx = await client.sendVideoAsSticker(m.chat, mediaxx, m, { packname: Kresswell, author: Muiruri });
+  let encmediaxx = await client.sendVideoAsSticker(m.chat, mediaxx, m, { packname: MAXI, author: MERTENS });
   await fs.unlinkSync(encmediaxx)
   } else {
-  reply(`Send a sticker with caption ${prefix + command}`);
+  reply(`Heyyo please tag or send a sticker with that caption lol ${prefix + command}`);
   }
 
 } catch (errr) { 
- await reply("Something went wrong! Looks like I am unable to convert animated stickers")}
+ await reply("Sorry Dawgg....I am unable to convert this animated sticker")}
 
   }
 break;
@@ -1127,7 +1129,7 @@ case 'attp2':
 case 'attp3':
   
   if (!q) return m.reply('Give me text');
-  m.reply("Please wait");
+  m.reply("A minute lol");
 
   let apiUrl;
 
@@ -1177,7 +1179,7 @@ case "chatgpt":
   
     if (!text) {
         await doReact("❌");
-        return m.reply(`*Provide me a query,* e.g., "Who made chat GPT?"`);
+        return m.reply(`*Ask FIGANINTY anything,* e.g., "Who are the founder members of the famous *NAS* in the U.S.A?"`);
     }
 
     try {
@@ -1200,10 +1202,10 @@ case "chatgpt":
             text: data.answer,
             contextInfo: {
                 externalAdReply: {
-                    title: "GPT TURBO 3.5K",
+                    title: "A CHATGPT CHATBOT BY FIGANINTY",
                     body: "",
                     mediaType: 1,
-                    thumbnailUrl: "https://i.ibb.co/9bfjPyH/1-t-Y7-MK1-O-S4eq-YJ0-Ub4irg.png",
+                    thumbnailUrl: "https://th.bing.com/th/id/OIP.L2ay_bywq39xQ2ejVeWOaAHaEJ?w=298&h=180&c=7&r=0&o=5&pid=1.7",
                     renderLargerThumbnail: false,
                     mediaUrl: "",
                     sourceUrl: "",
@@ -1219,7 +1221,7 @@ case "chatgpt":
     }
     break;
 case 'apk': case 'app': case 'apkdl': {
-  if (!text) throw `I need an apk name for download`;
+  if (!text) throw `Give me the APK name dawgg`;
 
   const getRandomName = (ext) => `${Math.floor(Math.random() * 10000)}${ext}`;
   const randomName = getRandomName(".apk");
@@ -1227,7 +1229,7 @@ case 'apk': case 'app': case 'apkdl': {
 
   let searchResults = await search(text);
 
-  if (!searchResults.length) return m.reply("App not found!");
+  if (!searchResults.length) return m.reply("I haven't found your requested app!");
 
   const data = await download(searchResults[0].id);
 
@@ -1236,16 +1238,17 @@ case 'apk': case 'app': case 'apkdl': {
   const url = data.dllink;
   const iconUrl = data.icon;
 
-  let info = `╭───〈 *${data.name}* 〉───◆
-▯╭─────────────···▸
+  let info = `╭ـــــــــــــــﮩ٨ـ️ *${data.name}* ـــــــــــــــﮩ٨ـ
+▯╭ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ
 ┴│▸
-▮➣ *App Name:* ${data.name}
-▮➣ *App Id:* ${data.package}
-▮➣ *Last Update:* ${data.lastup}
-▮➣ *App Size:* ${data.size}
-▮➣ *App Version:* ${data.version}
-┃✵╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷`;
+˚₊· ͟͟͞͞➳❥ *ΛPP ПΛMΣ:* ${data.name}
+˚₊· ͟͟͞͞➳❥ *ΛPP ID:* ${data.package}
+˚₊· ͟͟͞͞➳❥ *ᄂΛƧƬ ЦPDΛƬΣ:* ${data.lastup}
+˚₊· ͟͟͞͞➳❥ *ΛPP ƧIZΣ:* ${data.size}
+˚₊· ͟͟͞͞➳❥ *ΛPP VΣЯƧIӨП:* ${data.version}
+˚₊· ͟͟͞͞➳❥ *𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀*
+┃✵╰ ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ
+╰ ـــــــــــــــﮩ٨ـ ـــــــــــــــﮩ٨ـ`; 
 
   // Download icon
   const iconPath = `./${getRandomName(".png")}`;
@@ -1271,9 +1274,9 @@ case 'apk': case 'app': case 'apkdl': {
   // Delete temporary icon file
   fs.unlink(iconPath, (err) => {
     if (err) {
-      console.error('Error deleting icon file:', err);
+      console.error('FIGANINTY has experienced some errors while deleting the icon file:', err);
     } else {
-      console.log('Icon file deleted successfully');
+      console.log('FIGANINTY has successfully deleted the icon file');
     }
   });
 
@@ -1294,19 +1297,19 @@ case 'apk': case 'app': case 'apkdl': {
         fileName: `${data.name}.apk`
       };
 
-      client.sendMessage(m.chat, apkMessage, { quoted: m });
+      client.sendMessage(m.chat, apkMessage, { quoted: m })
 
       // Delete temporary APK file
       fs.unlink(filePath, (err) => {
         if (err) {
-          console.error('Error deleting APK file:', err);
+          console.error('FIGANINTY has experienced some errors while deleting the APK file:', err);
         } else {
-          console.log('APK file deleted successfully');
+          console.log('FIGANINTY has experienced some errors while deleting the APK file');
         }
       });
     }).catch(error => {
       fs.unlink(filePath);
-      return reply('*Apk not Found, Sorry*');
+      return reply('*FIGANINTY has not found the APK file*');
     });
 
   break;
@@ -1316,7 +1319,7 @@ case 'apk': case 'app': case 'apkdl': {
 
 const getCase = (cases) => {
 
-            return "case  "+`'${cases}'`+fs.readFileSync("./escalibud.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
+            return "case  "+`'${cases}'`+fs.readFileSync("./figa92.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
 
         }
             try{
@@ -1340,10 +1343,10 @@ const getCase = (cases) => {
 break;
 */
 case 'wanumber': case 'nowa': case 'searchnumber':{
-                   if (!text) return reply(`📵🔢 Enter a number ending with 'x'\n\nExample: ${prefix + command} 254919933xx`)
+                   if (!text) return reply(`Please provide me a whatsapp number ending with 'f'\n\nExample: ${prefix + command} 96656739ffff`)
 var inputnumber = text.split(" ")[0]
 
-        reply(`📱🔍 Exploring for WhatsApp accounts within the range...`)
+        reply(`A minute lol as I search for you whatsapp accounts within that range🤔🔍💻...`)
         function countInstances(string, word) {
             return string.split(word).length - 1
         }
@@ -1358,9 +1361,9 @@ var inputnumber = text.split(" ")[0]
         } else if (random_length == 3) {
             randomxx = 1000
         }
-        var text66 = `🔖 *WhatsApp Numbers Directory*\n\n`
+        var text66 = `🔖 *Here are the whatsapp details*\n\n`
         var nobio = `\n*Bio:* || \nHey there! I am using WhatsApp.\n`
-        var nowhatsapp = `\n*Numbers with no WhatsApp account within provided range.*\n`
+        var nowhatsapp = `\n*FIGANINTY has found no whatsapp accounts.*\n`
         for (let i = 0; i < randomxx; i++) {
             var nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
             var status1 = nu[Math.floor(Math.random() * nu.length)]
@@ -1388,7 +1391,7 @@ var inputnumber = text.split(" ")[0]
                 if (anu1 == '401' || anu1.status.length == 0) {
                     nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
                 } else {
-                    text66 += `📞 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n 🌐 ️*Bio :* ${anu1.status}\n⏳️*Last update :* ${moment(anu1.setAt).tz('Africa/Nairobi').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+                    text66 += `*Here is the found whatsapp account number:* wa.me/${anu[0].jid.split("@")[0]}\n *Bio :* ${anu1.status}\n*Last update :* ${moment(anu1.setAt).tz('Africa/Nairobi').format('HH:mm:ss DD/MM/YYYY')}\n\n`
                 }
             } catch {
                 nowhatsapp += `${number0}${i}${number1}\n`
@@ -1412,7 +1415,7 @@ break;
                                 client.sendMessage(m.chat, { sticker: { url: mariaresources[i].url }})
                         }
                 }
-        } else reply(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
+        } else reply(`Please provide me with the telegram link lol.\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
 break; 
   
@@ -1458,8 +1461,8 @@ case "ai": case "openai":
           try {
            /* if (!isCreator) return reply('_Maaf, Command Ini Khusus Developer Bot Whatsap_*')*/
             if (keyopenai === keyopenai);
-            if (!text) return reply(`InfinityAI:
-Please provide more information for me to help you`);
+            if (!text) return reply(`FIGANINTY:
+Please provide more info for me to assist you`);
             const configuration = new Configuration({
               apiKey: keyopenai,
             });
