@@ -596,7 +596,7 @@ if (m.text) {
             if (audioUrl) {
                 const audioStream = ytdl(audioUrl, { filter: 'audioonly' });
                 await client.sendMessage(m.chat, { audio: audioStream }, { quoted: m });
-            } else {
+7            } else {
                 await client.sendMessage(m.chat, { text: 'No valid audio URL found in the quoted message.' }, { quoted: m });
             }
         } else if (isVideoMenu && lowerText === '2') {
@@ -2059,10 +2059,10 @@ case 'remini': case 'upscale': case 'enhance': case 'hd': {
         let proses = await remini(media, "enhance");
 
         // Send the enhanced image with the new caption
-        client.sendMessage(m.chat, { image: proses, caption: `${isdone} enhanced by InfinityAI ` }, { quoted: m });
+        client.sendMessage(m.chat, { image: proses, caption: `${isdone} enhanced by FIGANINTY ` }, { quoted: m });
     } catch (error) {
         console.error('Error in Remini enhancement:', error);
-        reply(`An error occurred: ${error.message}`);
+        reply(`FIGANINTY experienced an error: ${error.message}`);
     }
     
 break;
@@ -2070,7 +2070,7 @@ break;
 
 case 'toanime':
   if (!quoted) return reply(`Where is the picture?`);
-  if (!/image/.test(mime)) return reply(`Send/Reply Photos With Captions ${prefix + command}`);
+  if (!/image/.test(mime)) return reply(`Please send or reply any image with a caption ${prefix + command}`);
 
   try {
     // Download the image
@@ -2083,7 +2083,7 @@ case 'toanime':
     // Upload the image
     try {
       const image = await uploadImage(dataaa);
-      console.log('Image uploaded successfully:', image);
+      console.log('FIGANINTY has successfully uploaded the image:', image);
 
       // Generate anime version using Lolhuman API
       try {
@@ -2102,20 +2102,20 @@ case 'toanime':
       }
     } catch (uploadError) {
       console.error('Error uploading image:', uploadError);
-      throw `*[❗] Error uploading image: ${uploadError.message || uploadError}.*`;
+      throw `* Error uploading image: ${uploadError.message || uploadError}.*`;
     }
   } catch (downloadError) {
     console.error('Error downloading image:', downloadError);
-    throw `*[❗] Error downloading image: ${downloadError.message || downloadError}.*`;
+    throw `* Error downloading image: ${downloadError.message || downloadError}.*`;
   }
   break;
 case 'tiktok':
 case 'tt':
 case 'tiktoknowm':
   try {
-    if (!text) reply ('Enter Query Link!');
+    if (!text) reply ('Please provide FIGANINTY with your tiktok link.');
 
-    reply('Please wait');
+    reply('A minute lol...');
 
     let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktok2?apikey=GataDios&url=${encodeURIComponent(text)}`);
 
@@ -2132,7 +2132,7 @@ case 'tiktoknowm':
       fs.writeFileSync(`./${randomName}`, videoBuffer);
 
       // Send the video using gss.sendMessage with the saved video
-      await client.sendMessage(m.chat, { video: fs.readFileSync(`./${randomName}`), mimetype: 'video/mp4', caption: 'Downloaded by InfinityAI'}, { quoted: m });
+      await client.sendMessage(m.chat, { video: fs.readFileSync(`./${randomName}`), mimetype: 'video/mp4', caption: 'Downloaded by FIGANINTY'}, { quoted: m });
 
       // Delete the temporary file
       fs.unlinkSync(`./${randomName}`);
@@ -2390,10 +2390,10 @@ case 'tourl': {
                                 if (args.length < 1) return reply(`Use ${prefix}delrespond hi`)
                                 if (!checkCommands(body.slice(11), commandsDB)) return reply(`Not in my database`)
                 deleteCommands(body.slice(11), commandsDB)
-                                reply(`Successfully deleted response ${body.slice(11)}`)
+                                reply(`FIGANINTY has successfully deleted response ${body.slice(11)}`)
                                 break
                                 case 'respondlist':
-if (!isPrem) return reply('This is a premium command')
+if (!isPrem) return reply('This is a premium command lol')
       
 teks = `\`\`\`「 LIST RESPON  」\`\`\`\n\n`
 for (let i = 0; i < commandsDB.length; i ++){
@@ -2406,22 +2406,22 @@ break
 
         // banchat fixed by xeon
 case 'banchat':
-if (!m.isGroup) return reply('this feature is only for groups')
-if (!itsMe && !Owner && !isAdmin)return mentions(`*This Order is Specially for owner @${ownerN} !*`, [`${ownerN}@s.whatsapp.net`], true)
-//if (!isBotGroupAdmin) return reply('You are not an admin')
-if (isBanchat) return reply(`already banned`)
+if (!m.isGroup) return reply('Add me to your groups dawgg')
+if (!itsMe && !Owner && !isAdmin)return mentions(`*You ain't my owner @${ownerN} !*`, [`${ownerN}@s.whatsapp.net`], true)
+//if (!isBotGroupAdmin) return reply('You ain't an admin lol')
+if (isBanchat) return reply(`Already banned`)
 bancht.push(from)
 fs.writeFileSync('./database/banchat.json', JSON.stringify(bancht))
-reply(`Successful bot Ban on this group`)
+reply(`FIGANINTY has successfully banned the bot in this group`)
 break
 
 case 'unbanchat':
-if (!itsMe && !Owner)return reply('Only owner can use this feature')
+if (!itsMe && !Owner)return reply('You ain't my owner')
 if (!isBanchat) return reply(`Already at UnBan`)
 let ubc = bancht.indexOf(from)
 bancht.splice(ubc, 1)
 fs.writeFileSync('./database/banchat.json', JSON.stringify(bancht))
-reply(`The bot has been unbanned in this group`)
+reply(`FIGANINTY has successfully unbanned the bot in this group`)
 break;
 
 case 'listbanchat': case 'listbc':
@@ -2437,22 +2437,22 @@ case 'img': {
 
        if (!text) return reply('Example : ${prefix + command} Snoop Dogg'
 )
-let escalibudimg ="https://api.akuari.my.id/search/googleimage?query=${text}";
-        xeonezyanu = await fetchJson(escalibudimg)
+let mertensimg ="https://api.akuari.my.id/search/googleimage?query=${text}";
+        xeonezyanu = await fetchJson(mertensimg)
 
         n = xeonezyanu.result
 
         images = n[Math.floor(Math.random() * n.length)]
 
-let kressimg=`*-------「 GIMAGE SEARCH 」-------*\n🤠 *Query* : ${text}\n🔗 *Media Url* : ${images}}`;
-                client.sendMessage(m.chat, { image: { url: images}, caption: kressimg}, { quoted: m })
+let maximg=`*ـــــــــــــــﮩ٨ـ GIMAGE SEARCH ـــــــــــــــﮩ٨ـ*\n🤠 *Query* : ${text}\n🔗 *Media Url* : ${images}}`;
+                client.sendMessage(m.chat, { image: { url: images}, caption: maximg}, { quoted: m })
         }
 
         break;
 case 'openin': {
 if (!m.isGroup) return reply('Group Command')
 if (!isAdmin) return reply('Are you an Admin??')
-if (!isBotAdmin) return reply('Foolish,,Are you a Bot Admin')
+if (!isBotAdmin) return reply('UFF!! YFIGANINTY is not an admin')
 if (args[1] == 'second') {
 var timer = args[0] * `1000`
 } else if (args[1] == 'minute') {
@@ -2467,7 +2467,7 @@ return reply('*Choose:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
 reply(`Open Time ${q} Starting from now`)
 setTimeout(() => {
 var nomor = m.participant
-const open = `*On time* Group Opened By Admin\n Now Members Can Send Messages`
+const open = `*Finally* Group Opened By FIGANINTY\n You can now send messages`
 client.groupSettingUpdate(from, 'not_announcement')
 reply(open)
 }, timer)
@@ -2491,7 +2491,7 @@ return reply('*Choose:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
 reply(`Close Time ${q} Starting from now`)
 setTimeout(() => {
 var nomor = m.participant
-const close = `*On time* Group Closed By Admin\nNow Only Admins Can Send Messages`
+const close = `*Finally* FIGANINTY has closed the group\nNow Only Admins Can Send Messages`
 client.groupSettingUpdate(from, 'announcement')
 reply(close)
 }, timer)
@@ -2529,22 +2529,22 @@ client.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Here you go!`, file
 }
 break;
 case 'instastalk': case 'igs': {
-if (!args[0]) return reply(`Enter Instagram Username\n\nExample: ${prefix} Kresswell0`)
+if (!args[0]) return reply(`Please provide me with an Instagram Username\n\nExample: ${prefix} Kresswell0`)
 
 const igs = require('api-dylux')
-await reply(`Please wait...`);
+await reply(`A minute lol...`);
     try {
     let res = await igs.igStalk(args[0])
     let te = `
-┌──「 *Information* 
-▢ *🔖Name:* ${res.name} 
-▢ *🔖Username:* ${res.username}
-▢ *👥Follower:* ${res.followersH}
-▢ *🫂Following:* ${res.followingH}
-▢ *📌Bio:* ${res.description}
-▢ *🏝️Posts:* ${res.postsH}
-▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
-└────────────`
+┌ـــــــــــــــﮩ٨ـ️ *Insta info* ـــــــــــــــﮩ٨ـ 
+˚₊· ͟͟͞͞➳❥ *Name:* ${res.name} 
+˚₊· ͟͟͞͞➳❥ *Username:* ${res.username}
+˚₊· ͟͟͞͞➳❥ *Follower:* ${res.followersH}
+˚₊· ͟͟͞͞➳❥ *Following:* ${res.followingH}
+˚₊· ͟͟͞͞➳❥ *Bio:* ${res.description}
+˚₊· ͟͟͞͞➳❥ *Posts:* ${res.postsH}
+˚₊· ͟͟͞͞➳❥ *Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+└ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ`
      await client.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
       } catch {
         reply(`Make sure the username comes from *Instagram*`)
@@ -2553,7 +2553,7 @@ await reply(`Please wait...`);
 break;
 case 'snapshotfull': case 'ssf':
   try {
-    if (!text) return reply("```Uhh Please, Give me Url!```");
+    if (!text) return reply("```please provide FIGANINTY with Url!```");
     let urll = `https://image.thum.io/get/fullpage/=${text.match(/\bhttps?:\/\/\S+/gi)[0]}`
     let media = await getBuffer(urll)
     return await client.sendMessage(m.chat, { image: media }, { quoted: m });
@@ -2624,8 +2624,8 @@ case 'ss':
  break;
 /*case 'igvideo':
 case 'igvid':{
-if (!q) return  reply("🧩Link?")
-let igmess = `By InfinityAI`;
+if (!q) return  reply("Link?")
+let igmess = `𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀`;
 let res = await fetch(`https://vihangayt.me/download/instagram?url=${q}`)
 let json = await res.json()
 client.sendMessage(m.chat, { video: { url: json.data.data[0].url }, caption: igmess}, {quoted: m})
@@ -2640,16 +2640,16 @@ case 'igvideo': case 'igreels':
 			})
 			break;
 case 'google': {
-client.sendMessage(from, { react: { text: "🔎", key: m.key }}) 
+client.sendMessage(from, { react: { text: "🌪️", key: m.key }}) 
 if (!q) return reply(`Example : ${prefix + command} Who is Kresswell`)
 let google = require('google-it')
 google({'query': text}).then(res => {
-let teks = `「🏮 *Google Search Engine*🏮」 \n\n
+let teks = `「*Google Search Engine*」 \n\n
 `
 for (let g of res) {
-teks += `🧧 *Title* : ${g.title}\n`
-teks += `🔮 *Description* : ${g.snippet}\n`
-teks += `📎 *Link* : ${g.link}\n\n────────────────────\n\n`
+teks += ` *Title* : ${g.title}\n`
+teks += ` *Description* : ${g.snippet}\n`
+teks += ` *Link* : ${g.link}\n\n────────────────────\n\n`
 } 
 reply(teks)
 })
@@ -2673,14 +2673,14 @@ Cieeee, What's Going On❤️💖👀`,
                 externalAdReply: {
                   showAdAttribution: true,
                   containsAutoReply: true,
-                  title: ` INFINITY-AI `,
-                  body: `Just for fun`,
+                  title: ` FIGANINTY `,
+                  body: `Doin' it for fun`,
                   previewType: "PHOTO",
                   thumbnailUrl: ``,
                   thumbnail: fs.readFileSync(
-                    `./escalibud.jpg`
+                    `./figa92.jpg`
                   ),
-                  sourceUrl: `https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e`,
+                  sourceUrl: `https://whatsapp.com/channel/0029VaaoDP0J3juyVn6gvo3J`,
                 },
               },
             },
@@ -2695,26 +2695,26 @@ Cieeee, What's Going On❤️💖👀`,
                  if (!isAdmin) throw admin; 
                  if (!text) throw 'Provide the text for the group subject.'; 
                  await client.groupUpdateSubject(m.chat, text); 
- m.reply('Group name successfully updated! 👍'); 
+ m.reply('FIGANINTY has successfully changed the group name😉'); 
              } 
              break; 
  
 case 'nsfw':
-                if (!m.isGroup) return reply('this feature is only for groups')
-                        if (!Owner && !isAdmin) return reply('only admin can use this feature')
-                                        if (args.length < 1) return reply(`to activate type : ${prefix}nsfw 1`)
+                if (!m.isGroup) return reply('You can only use this command in groups dawgg')
+                        if (!Owner && !isAdmin) return reply('This is an admin's command lol')
+                                        if (args.length < 1) return reply(` If you wanna activate it just type : ${prefix}nsfw 1`)
                                         if (Number(args[0]) === 1) {
-                                                if (isNsfw) return reply('Already Activated')
+                                                if (isNsfw) return reply('FIGANINTY had already activated it')
                                                 nsfw.push(from)
                                                 fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
-                                                reply('Successfully activated the nsfw feature')
+                                                reply('FIGANINTY has successfully activated the nsfw feature')
                                                 client.sendMessage(from, `Free to use xnxxsearch 🗿`, text)
                                         } else if (Number(args[0]) === 0) {
                                                 if (!isNsfw) return reply('Its off')
                                                 var ini = nsfw.indexOf(from)
                                                 nsfw.splice(ini, 1)
                                                 fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
-                                                reply('Successfully disabled the nsfw feature')
+                                                reply('FIGANINTY has successfully deactivated the nsfw feature')
                                         } else {
                                                 reply('1 to turn on, 0 to turn off')
                                         }
@@ -2730,8 +2730,8 @@ case 'runtime': case 'alive':
             externalAdReply: {
                 showAdAttribution: false,
                 title: `INFINITY-AI is alive▪︎`,
-                sourceUrl: `https://t.me/EscaliBud`,
-                body: `Bot Created By 𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟}`
+                sourceUrl: `https://t.me/Ma_Xie`,
+                body: `𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀}`
             }
         }
     }, {
@@ -2739,35 +2739,35 @@ case 'runtime': case 'alive':
                 })
                 break;
 case 'ping': {
-  await doReact("🕘");
+  await doReact("⌛");
   const startTime = new Date();
-  const pingMsg = await client.sendMessage(m.chat, { text: '*cheking...*' });
+  const pingMsg = await client.sendMessage(m.chat, { text: '*A minute lol...*' });
 
  await client.relayMessage(m.chat, {
       protocolMessage: {
         key: pingMsg.key,
         type: 14,
         editedMessage: {
-          conversation: `*Response speed is:* ${new Date() - startTime} ms`
+          conversation: `*The latency speed of FIGANINTY is:* ${new Date() - startTime} ms`
         }
       }
     }, {});
-     await doReact("📍");
+     await doReact("⏳");
   } 
 break;
           case "linkgroup": case "link": { 
                  if (!m.isGroup) throw group; 
                  if (!isBotAdmin) throw botAdmin; 
                  let response = await client.groupInviteCode(m.chat); 
-                 client.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup link for  ${groupMetadata.subject}`, m, { detectLink: true }); 
+                 client.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nHere is the group link for  ${groupMetadata.subject}`, m, { detectLink: true }); 
              } 
  break;
 
 case '':
         if(isCmd2){
-        client.sendMessage(from, { react: { text: "✨" , key: m.key }})
+        client.sendMessage(from, { react: { text: "💹" , key: m.key }})
 
-     reply(`Hello ${pushname} ,You used my prefix.Please  Type *${prefix}help* to get my full command list.`)
+     reply(`Heyyo ${pushname} ,You used my prefix.Just type *${prefix}help* to get my full command list lol.`)
         }
 
     break;
@@ -2778,25 +2778,25 @@ case 'ghstalk': case 'githubstalk': case'github': {
 
   gitdata = await githubstalk.githubstalk(`${q}`)
   client.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
-  `*ㅤㅤㅤ|ㅤㅤㅤGithub Info ㅤㅤㅤ|\*
+  `*ㅤㅤㅤ ㅤㅤㅤGithub Info ㅤㅤㅤ \*
 
-  🚩 Id : ${gitdata.id}
-  🔖 Nickname : ${gitdata.nickname}
-  🔖 Username : ${gitdata.username}
-  ✨ Bio : ${gitdata.bio}
-  🏢 Company : ${gitdata.company}
-  📍 Location : ${gitdata.location}
-  📧 Email : ${gitdata.email}
-  🔓 Public Repo : ${gitdata.public_repo}
-  🔐 Public Gists : ${gitdata.public_gists}
-  💕 Followers : ${gitdata.followers}
-  👉 Following : ${gitdata.following}` }, { quoted: m } )
+  ˚₊· ͟͟͞͞➳❥  Id : ${gitdata.id}
+  ˚₊· ͟͟͞͞➳❥  Nickname : ${gitdata.nickname}
+  ˚₊· ͟͟͞͞➳❥  Username : ${gitdata.username}
+  ˚₊· ͟͟͞͞➳❥  Bio : ${gitdata.bio}
+  ˚₊· ͟͟͞͞➳❥  Company : ${gitdata.company}
+  ˚₊· ͟͟͞͞➳❥  Location : ${gitdata.location}
+  ˚₊· ͟͟͞͞➳❥  Email : ${gitdata.email}
+  ˚₊· ͟͟͞͞➳❥  Public Repo : ${gitdata.public_repo}
+  ˚₊· ͟͟͞͞➳❥  Public Gists : ${gitdata.public_gists}
+  ˚₊· ͟͟͞͞➳❥  Followers : ${gitdata.followers}
+  ˚₊· ͟͟͞͞➳❥  Following : ${gitdata.following}` }, { quoted: m } )
   }
   break;  
 case 'ytsearch':
     case 'yts': {
         if (!text) {
-            reply('Provide a search term!\E.g: Alan walker alone')
+            reply('Provide a search term!\E.g: Lil Baby *BABY*')
             return;
         }
         const term = text;
@@ -2804,11 +2804,11 @@ case 'ytsearch':
             videos
         } = await yts(term);
         if (!videos || videos.length <= 0) {
-            reply(`No Matching videos found for : *${term}*!!`)
+            reply(`FIGANINTY has not found any video for : *${term}*!!`)
             return;
         }
         const length = videos.length < 10 ? videos.length : 10;
-        let tex = `YouTube Search\n🔍 Query ~> ${term}\n\n`;
+        let tex = `YouTube Search\n🎥 Query ~> ${term}\n\n`;
         for (let i = 0; i < length; i++) {
             tex += `Link ~> ${videos[i].url}\nChannel ~> ${videos[i].author.name}\nTitle ~> ${videos[i].title}\n\n`;
         }
@@ -2820,7 +2820,7 @@ case 'ytsearch':
 case 'play':
     case 'stream':{
         if (!text) {
-            reply('Provide a search term!\nE.g: play NWA Appetite for destruction. ')
+            reply('Provide a search term!\nE.g: play Baby by Lil Baby and Dababy. ')
             return;
         }
         try {
@@ -2828,14 +2828,14 @@ case 'play':
                 videos
             } = await yts(text);
             if (!videos || videos.length <= 0) {
-                reply(`No Matching videos found for : *${args[0]}*!!`)
+                reply(`FIGANINTY has not found any video for : *${args[0]}*!!`)
                 return;
             }
             let urlYt = videos[0].url
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= 7200) {
-                reply(`File is too big for me to download`);
+                reply(`File is too big for FIGANINTY to download`);
                 return;
             }
             const getRandonm = (ext) => {
@@ -2850,15 +2850,16 @@ case 'play':
             console.log("Audio downloading ->", urlYt);
 
 reply(`
-╭═════════•∞•══╮
-│⿻ *INFINITY-AI MUSIC*
-│  *Youtube Player* ✨
-│⿻ *Title:* ${infoYt.videoDetails.title}
-│⿻ *Requested By:* ${m.pushName}
-│⿻ *Bot By:* 𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟
-╰══•∞•═════════╯
-✧∭✧∰✧∭✧ [] ✧∭✧∰✧∭✧
- ©Infinity Hackers 2024
+╭ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨
+│˚₊· ͟͟͞͞➳❥ *MUSIC BY FIGANINTY*
+│  ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ
+│˚₊· ͟͟͞͞➳❥ *Title:* ${infoYt.videoDetails.title}
+│˚₊· ͟͟͞͞➳❥ *Requested By:* ${m.pushName}
+│˚₊· ͟͟͞͞➳❥ * A Bot By:* MΛXI MΣЯƬΣПƧ
+│  ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ
+╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨
+ılıılıılıılıılı⋆⋆✮♪♫🎧♫♪✮⋆⋆
+ 𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀
 
 `);
             await new Promise((resolve, reject) => {
@@ -2870,7 +2871,7 @@ reply(`
             let fileSizeInBytes = stats.size;
             // Convert the file size to megabytes (optional)
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Audio downloaded ! \n Size: " + fileSizeInMegabytes);
+            console.log("FIGANINTY has successfully downloaded the audio ! \n Size: " + fileSizeInMegabytes);
             if (fileSizeInMegabytes <= 200) {
                 //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
                 await client.sendMessage(
@@ -2898,19 +2899,19 @@ case 'ytv':
             return `${Math.floor(Math.random() * 10000)}${ext}`;
         };
         if (args.length === 0) {
-            reply(` URL is empty! \nSend ${prefix}ytmp4 url`);
+            reply(` URL is empty! \nPlease send ${prefix}ytmp4 url`);
             return;
         }
         try {
             let urlYt = args[0];
             if (!urlYt.startsWith("http")) {
-                reply(`Give youtube link!`);
+                reply(`Provide FIGANINTY with the link!`);
                 return;
             }
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`Video file too big!`);
+                reply(`FIGANINTY is unable to download the file because it is too big!`);
                 return;
             }
             let titleYt = infoYt.videoDetails.title;
@@ -2922,7 +2923,7 @@ case 'ytv':
                 .pipe(fs.createWriteStream(`./${randomName}`));
             //22 - 1080p/720p and 18 - 360p
             console.log("Video downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
+            // reply("A minute lol as FIGANINTY downloads the video!");
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
                 stream.on("finish", resolve);
@@ -2952,14 +2953,14 @@ case 'ytv':
         }
 break;
             case 'style': case 'styletext': {
-                if (!text) return reply('You sent nothing') //wont response when limit runs out\\
+                if (!text) return reply('You haven't sent anything') //wont response when limit runs out\\
 
                 let { styletext } = require('./lib/scraper')
                 if (!text) return reply(`Enter Query Text!`)
                 let anu = await styletext(text)
                 let teks = `Entered Text ${text}\n\n`
                 for (let i of anu) {
-                    teks += `🔮 *${i.name}* : ${i.result}\n\n`
+                    teks += '*${i.name}* : ${i.result}\n\n`
                 }
                 reply(teks)
             }
@@ -2992,7 +2993,7 @@ break;
                 .pipe(fs.createWriteStream(`./${randomName}`));
             //22 - 1080p/720p and 18 - 360p
             console.log("Video downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
+            // reply("A minute lol as FIGANINTY downloads the video!");
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
                 stream.on("finish", resolve);
@@ -3023,15 +3024,15 @@ break;
 break;
           case "lyrics": 
  try { 
-//if (!isPrem) return reply('This is a premium command')
- if (!text) return reply("Provide a song name!"); 
+//if (!isPrem) return reply('You ain't a premium user')
+ if (!text) return reply("Provide FIGANINTY a song name!"); 
  const searches = await Client.songs.search(text); 
  const firstSong = searches[0]; 
  //await client.sendMessage(from, {text: firstSong}); 
  const lyrics = await firstSong.lyrics(); 
  await client.sendMessage(from, { text: lyrics}, { quoted: m }); 
  } catch (error) { 
-             reply(`I did not find any lyrics for ${text}. Try searching a different song.`); 
+             reply(`FIGANINTY did not find any lyrics for ${text}. Try searching a different song or come back later.`); 
              console.log(error); 
          } 
  //const artist = await Client.artists.get(456537); 
@@ -3043,13 +3044,13 @@ break;
 case 'song':
   try {
     if (!text) {
-      reply('Enter YouTube Link or Search Query!');
+      reply('Please provide FIGANINTY a YouTube Link or Search Query!');
       doReact("❌");
       return;
     }
 
     reply('Please Wait..');
-    await doReact("🕘");
+    await doReact("📹");
 
     // Check if the input is a valid YouTube URL
     const isUrl = ytdl.validateURL(text);
@@ -3073,15 +3074,16 @@ case 'song':
     url: videoInfo.thumbnail,
   },
   caption: `
-╭═════════•∞•══╮
-│⿻ *INFINITY-AI MUSIC*
-│  *Youtube Player* ✨
-│⿻ *Title:* ${videoInfo.title}
-│⿻ *Duration:* ${videoInfo.timestamp}
-│⿻ *Uploader:* ${videoInfo.author.name}
-│⿻ *Size:* ${formatBytes(finalAudioBuffer.length)}
-│⿻ *Upload Date:* ${formatUploadDate(videoInfo.uploadDate)}
-╰══•∞•═════════╯
+╭ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨
+│˚₊· ͟͟͞͞➳❥ *MUSIC BY FIGANINTY*
+│  ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ
+│˚₊· ͟͟͞͞➳❥ *Title:* ${videoInfo.title}
+│˚₊· ͟͟͞͞➳❥ *Duration:* ${videoInfo.timestamp}
+│˚₊· ͟͟͞͞➳❥ *Uploader:* ${videoInfo.author.name}
+│˚₊· ͟͟͞͞➳❥ *Size:* ${formatBytes(finalAudioBuffer.length)}
+│˚₊· ͟͟͞͞➳❥ *Upload Date:* ${formatUploadDate(videoInfo.uploadDate)}
+│˚₊· ͟͟͞͞➳❥ *𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀*
+╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨
 `, 
 };
 
@@ -3091,7 +3093,7 @@ case 'song':
           await doReact("✅");
         } catch (err) {
           console.error('Error sending audio:', err);
-          reply('Error sending audio.');
+          reply('FIGANINTY experienced some error while sending audio.');
           await doReact("❌");
         }
       });
@@ -3122,15 +3124,16 @@ case 'song':
     url: firstVideo.thumbnail,
   },
   caption: `
-╭═════════•∞•══╮
-│⿻ *INFINITY-AI MUSIC*
-│  *Youtube Mp3 Player* ✨
-│⿻ *Title:* ${firstVideo.title}
-│⿻ *Duration:* ${firstVideo.timestamp}
-│⿻ *Uploader:* ${firstVideo.author.name}
-│⿻ *Size:* ${formatBytes(finalAudioBuffer.length)}
-│⿻ *Upload Date:* ${formatUploadDate(firstVideo.uploadDate)}
-╰══•∞•═════════╯
+╭ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ
+│˚₊· ͟͟͞͞➳❥ *MUSIC BY FIGANINTY*
+│   ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ
+│˚₊· ͟͟͞͞➳❥ *Title:* ${firstVideo.title}
+│˚₊· ͟͟͞͞➳❥ *Duration:* ${firstVideo.timestamp}
+│˚₊· ͟͟͞͞➳❥ *Uploader:* ${firstVideo.author.name}
+│˚₊· ͟͟͞͞➳❥ *Size:* ${formatBytes(finalAudioBuffer.length)}
+│˚₊· ͟͟͞͞➳❥ *Upload Date:* ${formatUploadDate(firstVideo.uploadDate)}
+│˚₊· ͟͟͞͞➳❥ *𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀*
+╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ
 `,
 };
           await client.sendMessage(m.chat, thumbnailMessage, { quoted: m });
@@ -3151,81 +3154,10 @@ case 'song':
   break;
         
               case "script": case "repo":
-const _0xcb3a50 = _0x6703;
-(function (_0x6f9f01, _0x81a01d) {
-    const _0x2a8c87 = _0x6703, _0x24079e = _0x6f9f01();
-    while (!![]) {
-        try {
-            const _0x50ad9c = -parseInt(_0x2a8c87(0x13d)) / (-0x12b8 + 0xc1d + 0x69c) * (-parseInt(_0x2a8c87(0x152)) / (0x191 + -0x1b45 * -0x1 + 0xcd * -0x24)) + parseInt(_0x2a8c87(0x12c)) / (-0xfb3 + 0x1 * 0x283 + 0xd33) + parseInt(_0x2a8c87(0x150)) / (-0x980 + -0x64e * 0x1 + 0xfd2) + parseInt(_0x2a8c87(0x12d)) / (0x23a + 0x4 * 0x66e + -0x1bed) * (-parseInt(_0x2a8c87(0x12b)) / (0x26a3 * -0x1 + 0x568 + -0x2141 * -0x1)) + parseInt(_0x2a8c87(0x147)) / (0x49 * 0x19 + 0x2520 + -0x275 * 0x12) + parseInt(_0x2a8c87(0x13c)) / (0x1 * -0x1fdc + -0x22fb + -0x35 * -0x143) + -parseInt(_0x2a8c87(0x14d)) / (0x1e04 + -0xb * -0x2c7 + 0x34 * -0x12a);
-            if (_0x50ad9c === _0x81a01d)
-                break;
-            else
-                _0x24079e['push'](_0x24079e['shift']());
-        } catch (_0x4047d9) {
-            _0x24079e['push'](_0x24079e['shift']());
-        }
-    }
-}(_0x5ed0, 0xddda2 + -0xe5d56 + 0xbefcc));
-let scmess = _0xcb3a50(0x125) + _0xcb3a50(0x14b) + _0xcb3a50(0x132) + _0xcb3a50(0x134) + _0xcb3a50(0x145) + _0xcb3a50(0x133) + _0xcb3a50(0x144) + _0xcb3a50(0x14f) + _0xcb3a50(0x141) + _0xcb3a50(0x148) + _0xcb3a50(0x13e) + _0xcb3a50(0x127) + _0xcb3a50(0x12a) + _0xcb3a50(0x139) + _0xcb3a50(0x123) + _0xcb3a50(0x151) + _0xcb3a50(0x137) + _0xcb3a50(0x13f) + _0xcb3a50(0x140) + _0xcb3a50(0x12e) + _0xcb3a50(0x139) + _0xcb3a50(0x128) + _0xcb3a50(0x142) + _0xcb3a50(0x14e) + _0xcb3a50(0x146) + _0xcb3a50(0x13a);
-function _0x6703(_0x598fe9, _0x264b24) {
-    const _0x44d5ff = _0x5ed0();
-    return _0x6703 = function (_0x4a4a39, _0x3a4386) {
-        _0x4a4a39 = _0x4a4a39 - (-0x3bf * 0x5 + 0x2ef * -0x2 + -0x7 * -0x3ad);
-        let _0x4a9a47 = _0x44d5ff[_0x4a4a39];
-        return _0x4a9a47;
-    }, _0x6703(_0x598fe9, _0x264b24);
-}
-function _0x5ed0() {
-    const _0x4e7130 = [
-        '4115349GNydpr',
-        '──[\x20GITHUB',
-        'ACKERS\x20KEN',
-        '5PO0wZ94WM',
-        'T\x0a│◦➛Owner',
-        'YA\x20◇.',
-        '18798525tnhHyD',
-        't.me\x20\x0a\x20\x20└─',
-        'HACKERS\x20KE',
-        '3385084YmCoZc',
-        'om/EscaliB',
-        '2tOczOY',
-        'X2e',
-        '//github.c',
-        'readFileSy',
-        '\x0a╭─❒\x20SCRIP',
-        'sendMessag',
-        '\x20\x20│◦➛Scrip',
-        '//Infinity',
-        'INFINITY-A',
-        't\x20Link\x20:\x0a\x20',
-        '199164dkQxtd',
-        '997566bKyLCq',
-        '120eVHfme',
-        'hannel:\x20\x0a\x20',
-        '029VaByn0u',
-        '/channel/0',
-        'atsapp.com',
-        '\x20:\x20Kresswe',
-        'der953\x0a│∞\x20',
-        'll\x0a│◦➺Co-O',
-        './escalibu',
-        'chat',
-        'ud/Infinit',
-        'INFINITY\x20H',
-        '\x20│◦➛https:',
-        '───────❒',
-        'https://wh',
-        '8254680QmqdZK',
-        '836438odPfUT',
-        '\x20]──────❒\x0a',
-        'y-AI\x0a\x20\x20│◦➛',
-        'Telegram\x20C',
-        'NYA*\x0a└────',
-        'HackersKE.',
-        'd.jpg',
-        '*INFINITY\x20',
-        'wner\x20:\x20Spi',
-        '──────────'
+client.sendMessage(m.chat, { image: { url: `https://telegra.ph/file/30f488b3b6335c039ae2e.jpg` }, caption: 
+`👋🏻 Heyyo *${pushname}*,You can deploy 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 using the GitHub link below\n\nFork and give us a star.\n\n https://github.com/Mer-Tens/FIGANINTY\n\nEnjoy and have fun with the bot...\n\nUse the link below to pair 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 without scanning any qr code\n\n [https://replit.com/@maximertens254/Figaninty]`});
+
+        
     ];
     _0x5ed0 = function () {
         return _0x4e7130;
