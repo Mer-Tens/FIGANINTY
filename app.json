@@ -1,13 +1,13 @@
 {
   "name": "FIGANINTY",
   "description": "Whatsapp bot.",
-  "keywords": ["whatsapp bot"],
+  "keywords": ["Trial"],
   "repository": "https://github.com/Mer-Tens/FIGANINTY",
   "logo": "https://telegra.ph/file/30f488b3b6335c039ae2e.jpg",
   "stack": "container",
   "env": {
     "AUTOREAD": {
-      "description": "Enable auto read of messages",
+      "description": "Type TRUE if you want FIGANINTY to autoread your messages",
       "required": false,
       "value": "FALSE"
     },
@@ -22,17 +22,17 @@
   "value": ""
 },
     "ALWAYS_ONLINE": {
-  "description": "Put TRUE if you want your bot to automatically be online.",
+  "description": "Put TRUE if you want FIGANINTY to automatically be online.",
   "required": false,
   "value": "TRUE"
 },
 "AUTOVIEW_STATUS": {
-  "description": "Put TRUE if you want your bot to view whatsapp status automatically.",
+  "description": "Put TRUE if you want FIGANINTY to view whatsapp status automatically.",
   "required": false,
   "value": "TRUE"
 },
     "WA_PRESENCE": {
-  "description": "Put value as recording if you want bot to be recording all times and typing for typing",
+  "description": "Put value as recording if you FIGANINTY to be recording all times and typing for typing",
   "required": false,
   "value": "recording"
 },
@@ -42,7 +42,7 @@
       "value": "mongodb+srv://Bikash:Bikash@bikash.yl2nhcy.mongodb.net/?retryWrites=true&w=majority"
     },
     "PREFIX": {
-  "description": "Put any symbol. Leave it blank if you want it to reply to all commands without prefix",
+  "description": "Put any symbol. Leave it blank if you want FIGANINTY to reply to all commands without prefix",
   "required": false,
   "value": "."
 },
