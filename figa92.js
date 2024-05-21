@@ -1406,7 +1406,7 @@ break;
                 let mariaresources = await Telesticker(args[0])
                 await reply(`Sending ${mariaresources.length} stickers...`)
                 if (m.isGroup && mariaresources.length > 30) {
-                        await reply('Number of stickers more than 30, bot will send it in private chat.')
+                        await reply('Number of stickers more than 30, FIGANINTY will send it in private chat.')
                         for (let i = 0; i < mariaresources.length; i++) {
                                 client.sendMessage(m.sender, { sticker: { url: mariaresources[i].url }})
                         }
@@ -1421,7 +1421,7 @@ break;
   
                
 case 'toqr': {
-                if (!q) return reply(' Please include link or text!')
+                if (!q) return reply(' FIGANINTY has pleaded you to include link or text!')
                 const QrCode = require('qrcode-reader')
                 const qrcode = require('qrcode')
                 let qyuer = await qrcode.toDataURL(q, {
@@ -1430,7 +1430,7 @@ case 'toqr': {
                 let data = new Buffer.from(qyuer.replace('data:image/png;base64,', ''), 'base64')
                 let buff = getRandom('.jpg')
                 await fs.writeFileSync('./' + buff, data)
-let sakses = 'Successfully converted';
+let sakses = 'FIGANINTY has successfully converted';
                 let medi = fs.readFileSync('./' + buff)
                 await client.sendMessage(m.chat, {
                     image: medi,
@@ -1453,7 +1453,7 @@ const res = await fetch(`http://api.qrserver.com/v1/read-qr-code/?fileurl=${mem}
 const data = await res.json() 
 reply(util.format(data[0].symbol))
 } catch (err) {
-reply(`Reply Image That Has Qr`)
+reply(`Please tag or reply to an image that has QR`)
 }
 }
 break;
@@ -1490,7 +1490,7 @@ break;
           try {
             /*if (!isCreator) return reply('_Maaf, Command Ini Khusus Developer Bot Whatsap_*')*/
             if (keyopenai === keyopenai)
-            if (!text) return reply(`Infinity AI.\n\nExample:\n${prefix}${command} Wooden house on snow mountain`);
+            if (!text) return reply(`This is FIGANINTY.\n\nExample:\n${prefix}${command} Phil Foden performing his celebration`);
             const configuration = new Configuration({
               apiKey: keyopenai,
             });
@@ -1519,7 +1519,7 @@ case 'poll': {
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
                 return await reply(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Kresswell,Spider,ZzeroMind...`
+                    `Please provide FIGANINTY with 2 or more options \nExample: ${prefix}poll Who is the best U23 footballer?|Foden, Alvarez...`
                 )
             let options = []
             for (let i of opt.split(',')) {
@@ -1546,7 +1546,7 @@ case 'poll': {
                  let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
              } else { 
-                 m.reply(`Send an image or short video with the caption ${prefix + command}`); 
+                 m.reply(`Please provide FIGANINTY with a video or photo ${prefix + command}`); 
                  } 
           }
           break;
@@ -1668,7 +1668,7 @@ case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {
            client.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*Quality :* ${i.quality}`}, { quoted: m })
            }          
            }).catch((err) => {
-               reply('An error Occured')
+               reply('FIGANINTY experienced some errors')
            })
        }
        break;
@@ -1761,7 +1761,7 @@ case 'take':
     try {
       let commits = await DB.syncgit();
       if (commits.total === 0) {
-        reply(`Hey ${m.pushName}. You have the latest version installed.`);
+        reply(`Heyyo ${m.pushName}.Congrats. You have the latest version installed.`);
       } else {
         reply('Build Started...');
         let update = await DB.updatedb();
@@ -1774,13 +1774,13 @@ case 'take':
   }
   break;*/
 case 'update':
-  if (!Owner) return reply('This command is only for my owner');
+  if (!Owner) return reply('You ain't my owner. I only recognise Mertens s my legal owner.');
     const DB = require('./lib/scraper');
   try {
     let commits = await DB.syncgit();
 
     if (commits.total === 0) {
-      reply(`Hey ${m.pushName}. You have the latest version installed.`);
+      reply(`Heyyo ${m.pushName}. You have the latest version installed.`);
     } else {
       let update = await DB.sync();
       let buttonMessaged = {
@@ -1801,10 +1801,10 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
     break; 
 
 case 'imagine': case 'aiimage':
-  if (!text) throw `*You can generate images From text using this command*\n\n*𝙴xample usage*\n*◉ ${prefix} imagine Beautiful animegirl*\n*◉ ${prefix} imagine Elon musk with Iron man*`; 
+  if (!text) throw `*Heyyo dawgg This type of command is used to generate AI images from texts*\n\n*𝙴xample usage*\n*◉ ${prefix} imagine A beautiful art of Paris*\n*◉ ${prefix} imagine William Ruto in a bikini*`; 
 
 async function fetchImageData() {
-  let thingMsg = await client.sendMessage(m.chat, { text: 'Generating Images Please wait...' });
+  let thingMsg = await client.sendMessage(m.chat, { text: 'A moment lol. I am generating the desired image...' });
   const texti = text;
   try {
     const response = await axios.get(`https://v2-guru-indratensei.cloud.okteto.net/scrape?query=${texti}`);
@@ -1812,7 +1812,7 @@ async function fetchImageData() {
 
     const images = data.image_links;
     const timeforgen = data.execution_time;
-    const genetd =  `✅ Sucsessfully generated in ${timeforgen}`
+    const genetd =  `FIGANINTY has successfully generated in ${timeforgen}`
     const randomImageIndex = Math.floor(Math.random() * images.length);
     const randomImageLink = images[randomImageIndex];
     console.log(randomImageLink);
@@ -1834,9 +1834,9 @@ fetchImageData();
 break;
 
             case 'toimage': case 'toimg': {
-                if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `Tag a sticker with the caption *${prefix + command}*`
-                m.reply('Please wait......')
+                if (!quoted) throw 'Reply to your desired image'
+                if (!/webp/.test(mime)) throw `Please tag a sticker with the caption *${prefix + command}*`
+                m.reply('Aminute lol......')
                 let media = await client.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
@@ -1874,8 +1874,8 @@ break;
         let anutrest = await pinterest(text);
         let results = [];
 
-        // Get multiple random images (let's say 5 images)
-        const numImages = 5;
+        // Get multiple random images (let's say 9 images)
+        const numImages = 9;
         for (let i = 0; i < numImages && i < anutrest.length; i++) {
           results.push(anutrest[Math.floor(Math.random() * anutrest.length)]);
         }
@@ -1889,17 +1889,17 @@ break;
 case 'welcome': {
 if (/on/.test(text)) {
  if (global.welcome) {
-   m.reply("Already activated");
+   m.reply("FIGANINTY had already activated welcome messages");
  } else {
  global.welcome = true;
-m.reply("Activated welcome message");
+m.reply("FIGANINTY has successfully activated welcome messages");
 }
 } else if (/off/.test(text)) {
 if (!global.welcome) {
-   m.reply("Already deactivated");
+   m.reply("FIGANINTY had already deactivated welcome messages");
  } else {
  global.welcome = false;
-m.reply("Deactivated welcome message");
+m.reply("FIGANINTY has successfully activated welcome messages");
 }
 } else m.reply(`Type ${prefix+command} on|off`);
 }
@@ -1917,7 +1917,7 @@ case 'wallpaper': {
 }
 break;
 case 'wikimedia': {
-  if (!text) throw 'Enter Query Title';
+  if (!text) throw 'Please provide FIGANINTY with Query Title';
   let { wikimedia } = require('./lib/scraper');
   anu = await wikimedia(text);
   result = anu[Math.floor(Math.random() * anu.length)];
@@ -1941,7 +1941,7 @@ break;
   
 case 'apk':
 case 'apkdl':{
-if (!text) return reply("What apk u wanna download?")
+if (!text) return reply("Heyy lol. What is the name of the APK that you would like o download?")
 let resMaria = await fetch(`https://vihangayt.me/download/apk?id=${text}`)
 let jsonMaria = await resMaria.json()
 client.sendMessage(from, { document: { url: jsonMaria.data.dllink}, fileName : jsonMaria.data.name, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
@@ -1950,7 +1950,7 @@ client.sendMessage(from, { document: { url: jsonMaria.data.dllink}, fileName : j
 break;
 case 'fetch':
 case 'get':
-  if (!/^https?:\/\//.test(text)) throw 'Start the *URL* with http:// or https://';
+  if (!/^https?:\/\//.test(text)) throw 'Please start the *URL* with http:// or https://';
   const _url = new URL(text);
   const furl = `${_url.origin}${_url.pathname}?${_url.searchParams.toString()}`;
   const res = await fetch(furl);
@@ -1979,7 +1979,7 @@ case 'get':
 //owner commands
 case 'listpc': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *LIST OF PERSONAL CHATS*\n\nTotal Chat : ${anu.length} Chats\n\n`
+                 let teks = `*Here is the full list of your personal chats*\n\nTotal Chat : ${anu.length} Chats\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
                      teks += `⬡ *Name :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
@@ -1989,7 +1989,7 @@ case 'listpc': {
              break;
                 case 'listgc': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                let teks = `⬣ *LIST OF GROUP CHATS*\n\nTotal Group : ${anu.length} Group\n\n`
+                let teks = `*Here is the full list of your group chats*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await client.groupMetadata(i)
                      teks += `⬡ *Name :* ${metadata.subject}\n⬡ *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Created on :* ${moment(metadata.creation * 1000).tz('Africa/Nairobi').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Members :* ${metadata.participants.length}\n\n────────────────────────\n\n`
@@ -2028,15 +2028,15 @@ case 'add': {
   break;
 case 'buypremium':
             case 'premiumuser': {
-                let teks = `Hi ${pushname}👋\n Want to Buy Premium? Just chat with the owner😉`
+                let teks = `Heyyo ${pushname}👋\n Dou want to be a premium user? Just have a conversation with my owner😉`
                 await client.sendMessage(m.chat, {
                     text: teks,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
                             title: 'BUY PREMIUM',
-                            body: `15k / MONTH`,
-                            thumbnailUrl: 'https://telegra.ph/file/0955010ca2f8bf045fb0a.jpg',
+                            body: `100ksh / Day`,
+                            thumbnailUrl: 'https://telegra.ph/file/5b55dc38776ddf53dcd36.jpg',
                             sourceUrl: global.link,
                             mediaType: 1,
                             renderLargerThumbnail: false
@@ -2153,21 +2153,21 @@ case 'addprem':
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         addPremiumUser(m.mentionedJid[0], args[1], premium);
                     }
-                    reply("Successfully added toPremium")
+                    reply("HURRAY🥳🥳 you have successfully been added to Premium")
                 } else {
                     addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium);
                     reply("Success Via Number")
                 }
             break;
             case 'delprem':
-                if (!Owner) return reply('Owner command')
+                if (!Owner) return reply('You ain't my onwer')
                 if (args.length < 1) return reply(`Usage :\n*#delprem* @tag\n*#delprem* number`);
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         premium.splice(getPremiumPosition(m.mentionedJid[i], premium), 1);
                         fs.writeFileSync("./database/premium.json", JSON.stringify(premium));
                     }
-                    reply("Success Delete")
+                    reply("Uff!! You have successfully been removed from premium")
                 } else {
                     premium.splice(getPremiumPosition(args[0] + "@s.whatsapp.net", premium), 1);
                     fs.writeFileSync("./database/premium.json", JSON.stringify(premium));
@@ -2175,9 +2175,9 @@ case 'addprem':
                 }
             break
             case 'listprem': {
-    if (!Owner) return reply('Owner command');
+    if (!Owner) return reply('You ain't my owner');
     let data = require("./database/premium.json");
-    let ptxt = `*------「 LIST PREMIUM 」------*\n\n`;
+    let ptxt = `*ـــــــــــــــﮩ٨ـ 𝗟𝗜𝗦𝗧 𝗣𝗥𝗘𝗠𝗜𝗨𝗠 ـــــــــــــــﮩ٨ـ️*\n\n`;
 
     for (let premiumData of data) {
         ptxt += `Name : ${premiumData.id}\n`;
@@ -2189,9 +2189,9 @@ case 'addprem':
 break;
 
 case 'public': {
-                if (!Owner) return reply('You are Not my owner')
+                if (!Owner) return reply('You ain't my owner lol')
                 client.public = true
-                reply('*Successful in Changing To Public Usage*')
+                reply('*FIGANINTY is now in public mode*')
             }
             break;
 case 'true':
@@ -2212,31 +2212,31 @@ case 'truecaller':
 
     const { name, alternateName, addresses, email, countryDetails } = json;
 
-    let info = `╭––『 *Phone Detail* 』\n`;
-    info += `┆ ⚝ *Name:* ${name}\n`;
+    let info = `╭ـــــــــــــــﮩ٨ـ *Phone Detaisl* ـــــــــــــــﮩ٨ـ️\n`;
+    info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Name:* ${name}\n`;
 
     if (addresses && addresses.length > 0) {
-      info += `┆ ⚝ *Address:* ${addresses[0].city}, ${addresses[0].countryCode}\n`;
-      info += `┆ ⚝ *Time Zone:* ${addresses[0].timeZone}\n`;
-      info += `┆ ⚝ *Pin Code* ${addresses[0].zipCode}\n`;
-      info += `┆ ⚝ *Street* ${addresses[0].street}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Address:* ${addresses[0].city}, ${addresses[0].countryCode}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Time Zone:* ${addresses[0].timeZone}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Pin Code* ${addresses[0].zipCode}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Street* ${addresses[0].street}\n`;
     }
 
-    info += `┆ ⚝ *Email:* ${email}\n`;
-    info += `╰–––––––––––––––༓\n`;
+    info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Email:* ${email}\n`;
+    info += `╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ\n`;
 
     if (countryDetails) {
-      info += `╭––『 *countryDetails* 』\n`;
-      info += `┆ ⚝ *Name:* ${countryDetails.name}\n`;
-      info += `┆ ⚝ *Native:* ${countryDetails.native}\n`;
-      info += `┆ ⚝ *Phone Code:* +${countryDetails.phone[0]}\n`;
-      info += `┆ ⚝ *Continent:* ${countryDetails.continent}\n`;
-      info += `┆ ⚝ *Capital:* ${countryDetails.capital}\n`;
-      info += `┆ ⚝ *Currency:* ${countryDetails.currency.join(', ')}\n`;
-      info += `┆ ⚝ *Languages:* ${countryDetails.languages.join(', ')}\n`;
-      info += `┆ ⚝ *Flag:* ${countryDetails.flag}\n`;
-      info += `╰–––––––––––––––༓
-                *By Infinity AI* `;
+      info += `╭ـــــــــــــــﮩ٨ـ*CountryDetails* ـــــــــــــــﮩ٨ـ\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Name:* ${countryDetails.name}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Native:* ${countryDetails.native}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Phone Code:* +${countryDetails.phone[0]}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Continent:* ${countryDetails.continent}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Capital:* ${countryDetails.capital}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Currency:* ${countryDetails.currency.join(', ')}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Languages:* ${countryDetails.languages.join(', ')}\n`;
+      info += `ᡣ𐭩ྀིྀི ˚₊· ͟͟͞͞➳❥ *Flag:* ${countryDetails.flag}\n`;
+      info += `╰ـــــــــــــــﮩ٨ــــــــــــــــﮩ٨ـ༓
+                *𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀* `;
     }
 
     await client.sendMessage(m.chat, {
@@ -2286,7 +2286,7 @@ case 'tempmail': case 'mail': {
     }
   } catch (error) {
     console.error('Error:', error);
-    reply('Failed to fetch temporary email addresses.');
+    reply('FIGANINTY has failed to fetch temporary email addresses.');
   }
   break;
 }
@@ -2347,9 +2347,9 @@ case 'checkmail': {
   break;
 }
             case 'self': {
-                if (!Owner) return reply('You are not my Owner')
+                if (!Owner) return reply('You ain't my owner')
                  client.public = false
-                reply('*Successful in Changing To Self Usage*')
+                reply('*FIGANINTY is now in private mode*')
             }
             break;
 
@@ -2363,7 +2363,7 @@ client.sendMessage(from, { audio: a, mimetype: 'audio/mp4', ptt: true}, {quoted:
 }
 break;
 case 'tourl': {
-                m.reply('Please wait...')
+                m.reply('A minute lol...')
                 let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await client.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
