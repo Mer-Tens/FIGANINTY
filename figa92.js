@@ -3506,7 +3506,7 @@ if (!isNsfw) return reply(`Nsfw feature is not yet active in this group\nType: $
               }
               break;
 case 'ttc': case 'ttt': case 'tictactoe': {
-//if (!isPrem) return reply('This is a premium command')
+//if (!isPrem) return reply('You ain't a premium user.')
       
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
@@ -3514,23 +3514,23 @@ case 'ttc': case 'ttt': case 'tictactoe': {
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game!!'
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
-            m.reply('Partne Joined!')
+            m.reply('Someone joined!')
             room.o = m.chat
             room.game.playerO = m.sender
             room.state = 'PLAYING'
             let arr = room.game.render().map(v => {
             return {
-            X: '❌',
-            O: '⭕',
-            1: '1️⃣',
-            2: '2️⃣',
-            3: '3️⃣',
-            4: '4️⃣',
-            5: '5️⃣',
-            6: '6️⃣',
-            7: '7️⃣',
-            8: '8️⃣',
-            9: '9️⃣',
+            X: '✖️',
+            O: '⚪',
+            1: '❶',
+            2: '❷',
+            3: '❸',
+            4: '❹',
+            5: '❺',
+            6: '❻',
+            7: '❼',
+            8: '🎱',
+            9: '❾',
             }[v]
             })
             let str = `Room ID: ${room.id}
@@ -3574,8 +3574,8 @@ Type *surrender* to give up and admit defeat`
             }
             break;
 case 'addowner':
-                if (!Owner) return reply('Owner Command')
-if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 923166234989`)
+                if (!Owner) return reply('You ain't my owner lol')
+if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 966567393013`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
 let ceknye = await client.onWhatsApp(bnnd)
 if (ceknye.length == 0) return reply(`Enter A Valid And Registered Number On WhatsApp!!!`)
@@ -3584,8 +3584,8 @@ fs.writeFileSync('./database/owner.json', JSON.stringify(owner))
 reply(`Number ${bnnd} Has Become An owner!!!`)
 break;
 case 'delowner':
-                if (!isCreator) return reply('This Is A owner Command')
-if (!args[0]) return reply(`Use ${prefix+command} nomor\nExample ${prefix+command} 923166234989`)
+                if (!isCreator) return reply('You ain't my owner')
+if (!args[0]) return reply(`Use ${prefix+command} nomor\nExample ${prefix+command} 966567393013`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -3630,8 +3630,8 @@ function _0x4760() {
         '.;;;',
         'TEL;type=C',
         '96508KAPIBL',
-        '𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟',
-        'ᴡ͟ᴇ͟ʟ͟ʟ͟;\x0a',
+        '𝐌𝐚𝐱𝐢𝐞',
+        '𝐱𝐢𝐞;\x0a',
         '210CFdFjY',
         'sendMessag',
         'VERSION:3.',
@@ -3646,15 +3646,15 @@ function _0x4760() {
         '8-2420-85\x0a',
         '85:+254\x2079',
         '1912IfWhRn',
-        'N:;Muiruri',
-        'ORG:𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟',
+        'N:;Mertens',
+        'ORG:𓄂𝐌𝐚',
         'chat',
         'END:VCARD',
         'ELL;type=V',
         'll.\x0a',
         '2547982420',
         '1489329bLomsu',
-        'FN:Kresswe',
+        'FN:Maxi',
         'BEGIN:VCAR'
     ];
     _0x4760 = function () {
@@ -3669,22 +3669,22 @@ break;
                  if (!isAdmin) throw admin; 
                  if (!text) throw 'Provide the text for the group description' 
                  await client.groupUpdateDescription(m.chat, text); 
- m.reply('Group description successfully updated! 👍'); 
+ m.reply('FIGANINTY has successfully updated the group description!'); 
              } 
  break; 
           case 'botpp': { 
     if (!Owner) throw NotOwner; 
-    if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
-    if (!/image/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
-    if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
+    if (!quoted) throw `Tag an image you want to be FIGANINTY'S profile picture with ${prefix + command}`; 
+    if (!/image/.test(mime)) throw `Tag an image you want to be FIGANINTY'S profile picture with ${prefix + command}`; 
+    if (/webp/.test(mime)) throw `Tag an image you want to be FIGANINTY'S profile picture with ${prefix + command}`; 
     let media = await client.downloadAndSaveMediaMessage(quoted); 
     await client.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media)); 
-    reply `Bot's profile picture has been successfully updated!`; 
+    reply `FIGANINTY'S profile picture has been successfully updated!`; 
     } 
     break;
 case 'git': case 'gitclone':
-if (!args[0]) return reply(`Where is the link?\nExample :\n${prefix}${command} https://github.com/EscaliBud/EscaliBud`)
-if (!isUrl(args[0]) && !args[0].includes('github.com')) return reply(`Link invalid!!`)
+if (!args[0]) return reply(`Please provide FIGANINTY with the git link.\nExample :\n${prefix}${command} https://github.com/Mer-Tens/Mer-Tens`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return reply(`This is an invalid link!!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user, repo] = args[0].match(regex1) || []
     repo = repo.replace(/.git$/, '')
@@ -3694,7 +3694,7 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
 break
             case 'bcgc':
             case 'bcgroup': {
-                if (!Owner) return reply('You are not my Owner')
+                if (!Owner) return reply('You ain't my Owner')
                 if (!text) return reply(`Which text?\n\nExample : ${prefix + command} It's holiday tomorrow `)
                 let getGroups = await client.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
@@ -3702,15 +3702,15 @@ break
                 reply(`Send Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} second`)
                 for (let i of anu) {
                     await sleep(1500)
-                    let a = '```' + `ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ\n\n${text}\n\n` + '```' + '\n\n\nɪɴғɪɴɪᴛʏ ᴀɪ ʙʏ ɪɴғɪɴɪᴛʏ ʜᴀᴄᴋᴇʀs'
+                    let a = '```' + `ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ\n\n${text}\n\n` + '```' + '\n\n\n𝐴 𝐵𝑂𝑇 𝐵𝑌 𝑇𝐻𝐸 𝐹𝐼𝐺𝐴𝑁𝐼𝑁𝑇𝑌 𝑇𝐸𝐴𝑀'
                     client.sendMessage(i, {
                         text: a,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
-                                title: '□Paid BroadCast□',
+                                title: 'This is a paid broadcast',
                                 body: `Sent ${i.length} Group`,
-                                thumbnailUrl: 'https://i.imgur.com/pFHxvfE.jpeg',
+                                thumbnailUrl: 'https://telegra.ph/file/9438ad136408b6b50a980.jpg',
                                 sourceUrl: global.link,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -3723,7 +3723,7 @@ break
             break;
           case "leave": { 
                  if (!isAdmin) throw admin; 
- await client.sendText(m.chat, 'GoodBye Everyone.\n\n *InfinityAI is leaving this chat. . .*'); 
+ await client.sendText(m.chat, 'Adios fahm.\n\n *FIGANINTY is finally exiting your awesome group...*'); 
                  await client.groupLeave(m.chat); 
 
              } 
@@ -3807,27 +3807,27 @@ case 'weather':
         if (!isNsfw) return reply(NotNsfw);
         if (!m.isGroup) return reply(group);
 
-        const nsfwmenu=`┌──⊰ _*🔞NSFW 🔞*_
-│⊳ 💦  ${prefix}blowjob
-│⊳ 💦  ${prefix}cum
-│⊳ 💦  ${prefix}foot
-│⊳ 💦  ${prefix}gangbang
-│⊳ 💦  ${prefix}hentai
-│⊳ 💦  ${prefix}pussy
-│⊳ 💦  ${prefix}ass
-│⊳ 💦  ${prefix}trap
-│⊳ 💦  ${prefix}maal
-│⊳ 💦  ${prefix}ʀɪʙʙᴏɴꜱ
-│⊳ 💦  ${prefix}ʜᴀᴛꜱᴜɴᴇᴍɪᴋᴜ
-│⊳ 💦  ${prefix}ʜᴇᴀᴅʙᴀɴᴅ
-│⊳ 💦  ${prefix}ꜰᴏxɢɪʀʟ
-│⊳ 💦  ${prefix}ᴀɴɪᴍᴀʟᴇᴀʀꜱ
-│⊳ 💦  ${prefix}ʙʀᴀ
-│⊳ 💦  ${prefix}ꜱᴋɪʀᴛ
-│⊳ 💦  ${prefix}ʙʀᴇᴀꜱᴛꜱ
-│⊳ 💦  ${prefix}ᴛᴀᴛᴛᴏᴏ
-│⊳ 💦  ${prefix}ᴄʜᴀɪɴ
-└──────────⊰ 
+        const nsfwmenu=`┌ ـــــــــــــــﮩ٨ـ_*🔞NSFW 🔞*_ ـــــــــــــــﮩ٨ـ
+│˚₊· ͟͟͞͞➳❥  ${prefix}blowjob
+│˚₊· ͟͟͞͞➳❥  ${prefix}cum
+│˚₊· ͟͟͞͞➳❥  ${prefix}foot
+│˚₊· ͟͟͞͞➳❥  ${prefix}gangbang
+│˚₊· ͟͟͞͞➳❥  ${prefix}hentai
+│˚₊· ͟͟͞͞➳❥  ${prefix}pussy
+│˚₊· ͟͟͞͞➳❥  ${prefix}ass
+│˚₊· ͟͟͞͞➳❥  ${prefix}trap
+│˚₊· ͟͟͞͞➳❥  ${prefix}maal
+│˚₊· ͟͟͞͞➳❥  ${prefix}ʀɪʙʙᴏɴꜱ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ʜᴀᴛꜱᴜɴᴇᴍɪᴋᴜ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ʜᴇᴀᴅʙᴀɴᴅ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ꜰᴏxɢɪʀʟ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ᴀɴɪᴍᴀʟᴇᴀʀꜱ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ʙʀᴀ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ꜱᴋɪʀᴛ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ʙʀᴇᴀꜱᴛꜱ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ᴛᴀᴛᴛᴏᴏ
+│˚₊· ͟͟͞͞➳❥  ${prefix}ᴄʜᴀɪɴ
+└ ـــــــــــــــﮩ٨ـ ـــــــــــــــﮩ٨ـ 
 `
    client.sendMessage(m.chat, { image: { url: "./escalibud.jpg" }, caption: nsfwmenu }, { quoted: m });
         break;
@@ -3870,7 +3870,7 @@ ${1 + index}. *${repo.full_name}*${repo.fork ? '*FORKS*' : ''}
 ${repo.html_url}
 *CREATED ON:* ${formatDate(repo.created_at)}
 *LAST UPDATED ON:* ${formatDate(repo.updated_at)}
-👁  ${repo.watchers}   🍴  ${repo.forks}   ⭐ ${repo.stargazers_count}
+👁  ${repo.watchers}    ${repo.forks}    ${repo.stargazers_count}
 ${repo.open_issues} *ISSUES:*${repo.description ? `
 *DESCRIPTION:*\n${repo.description}` : ''}
 *CLONE:* $ git clone ${repo.clone_url}
@@ -3921,8 +3921,7 @@ break;
                 }
       if(isCmd2){
           client.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`🗿Kresswell Has not programmed me with such a Command!!, *${pushname}* .Type ${prefix} owner to contact my owner. Type *${prefix}help* to get my full command list!`)
-
+          reply (`FIGANINTY by Mertens Has not programmed me with such a Command!!, *${pushname}* .Type ${prefix} owner to contact my owner. Type *${prefix}help* to get my full command list!`)
       }                                 
 
 
